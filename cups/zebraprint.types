@@ -4,5 +4,5 @@
 # includes application/vnd.recordare.musicxml+xml which erroneously
 # claims all files with the extension ".xml"
 #
-application/x-cpcl+xml		priority(200) (string(0,"<?xml") + contains(0,1024,"<cpcl"))
+application/x-cpcl+xml		priority(200) (contains(0,1024,"<cpcl") + contains(0,1024,"http://www.fensystems.co.uk/xmlns/cpcl"))
 application/x-cpcl
