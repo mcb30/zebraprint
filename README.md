@@ -1,6 +1,8 @@
 Zebra printer support for Linux
 ===============================
 
+[![Build Status](https://travis-ci.org/unipartdigital/zebraprint.svg?branch=master)](https://travis-ci.org/unipartdigital/zebraprint)
+
 Zebra [printers](https://www.zebra.com/gb/en/products/printers.html)
 are supported by the [CUPS](https://www.cups.org) printing system but
 only as raster image devices.  This means that documents to be printed
