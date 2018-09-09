@@ -9,5 +9,5 @@ addons:
       - xsltproc
 
 script:
-  - make -C xml/tests
+  - make test
 
