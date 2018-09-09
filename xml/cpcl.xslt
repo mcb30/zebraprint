@@ -160,7 +160,7 @@
     <xsl:choose>
       <xsl:when test="@font"><xsl:value-of select="@font"/></xsl:when>
       <xsl:when test="@fg"><xsl:text>FG</xsl:text></xsl:when>
-      <xsl:otherwise><xsl:text>4</xsl:text></xsl:otherwise>
+      <xsl:otherwise><xsl:text>5</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:text> </xsl:text>
     <xsl:choose>
@@ -203,7 +203,7 @@
     <xsl:choose>
       <xsl:when test="@name"><xsl:value-of select="@name"/></xsl:when>
       <xsl:when test="@font"><xsl:value-of select="@font"/></xsl:when>
-      <xsl:otherwise><xsl:text>4</xsl:text></xsl:otherwise>
+      <xsl:otherwise><xsl:text>5</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:text> </xsl:text>
     <xsl:choose>
@@ -237,7 +237,7 @@
     <xsl:text> </xsl:text>
     <xsl:choose>
       <xsl:when test="@font"><xsl:value-of select="@font"/></xsl:when>
-      <xsl:otherwise><xsl:text>4</xsl:text></xsl:otherwise>
+      <xsl:otherwise><xsl:text>5</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:text> </xsl:text>
     <xsl:choose>
