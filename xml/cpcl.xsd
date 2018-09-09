@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	   xmlns="http://www.fensystems.co.uk/xmlns/cpcl"
+	   targetNamespace="http://www.fensystems.co.uk/xmlns/cpcl"
+	   elementFormDefault="qualified">
+
+  <!-- Root element -->
+  <xs:element name="cpcl" type="cpcl"/>
+
+  <!-- CPCL document -->
+  <xs:complexType name="cpcl">
+    <xs:sequence>
+      <xs:choice maxOccurs="unbounded">
+	<xs:element name="text" type="text"/>
+	<xs:element name="form" type="elementOnly"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="offset" type="xs:integer"/>
+    <xs:attribute name="dpi" type="xs:integer"/>
+    <xs:attribute name="xdpi" type="xs:integer"/>
+    <xs:attribute name="ydpi" type="xs:integer"/>
+    <xs:attribute name="height" type="xs:integer"/>
+    <xs:attribute name="qty" type="xs:integer"/>
+  </xs:complexType>
+
+  <!-- Bare element -->
+  <xs:complexType name="elementOnly" />
+
+  <!-- Text element -->
+  <xs:complexType name="text" mixed="true">
+    <xs:attribute name="font" type="xs:integer"/>
+    <xs:attribute name="size" type="xs:integer"/>
+    <xs:attribute name="fg" type="xs:integer"/>
+    <xs:attribute name="x" type="xs:integer"/>
+    <xs:attribute name="y" type="xs:integer"/>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,5 +1,8 @@
 ECHO		?= echo
+XMLLINT		?= xmllint
 XSLTPROC	?= xsltproc
+
+XSD		:= ../cpcl.xsd
 XSLT		:= ../cpcl.xslt
 
 XMLS		:= $(wildcard *.xml)
@@ -17,8 +20,13 @@ all : test
 
 test : $(TESTS)
 
-%.test : %.test.xslt
+%.test : %.test.xsd %.test.xslt
 	$(Q)
+
+%.test.xsd : %.xml
+	$(QM)$(ECHO) "  [XSD] $<"
+	$(Q)$(XMLLINT) --noout --schema $(XSD) $< 2>/dev/null || \
+		$(XMLLINT) --schema $(XSD) $<
 
 %.test.xslt : %.xml
 	$(QM)$(ECHO) "  [XSLT] $<"
