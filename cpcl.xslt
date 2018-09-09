@@ -50,6 +50,8 @@
       <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:call-template name="crlf"/>
+    <xsl:text>SETMAG 0 0</xsl:text>
+    <xsl:call-template name="crlf"/>
     <xsl:apply-templates/>
     <xsl:text>PRINT</xsl:text>
     <xsl:call-template name="crlf"/>
@@ -62,57 +64,101 @@
     </xsl:message>
   </xsl:template>
 
-  <!-- Raw quoted commands -->
-  <xsl:template match="z:cpcl/z:raw">
+  <!-- Raw data (including multiline items) -->
+  <xsl:template match="z:raw |
+		       z:item">
     <xsl:value-of select="text()"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
 
-  <!-- Comments -->
-  <xsl:template match="z:cpcl/comment()">
-    <xsl:text>;</xsl:text>
-    <xsl:value-of select="."/>
-    <xsl:call-template name="crlf"/>
-  </xsl:template>
-
   <!-- Zero parameter commands -->
-  <xsl:template match="z:cpcl/z:form |
-		       z:cpcl/z:in-inches |
-		       z:cpcl/z:in-centimeters |
-		       z:cpcl/z:in-millimeters |
-		       z:cpcl/z:in-dots">
+  <xsl:template match="z:form |
+		       z:journal |
+		       z:in-inches |
+		       z:in-centimeters |
+		       z:in-millimeters |
+		       z:in-dots |
+		       z:center |
+		       z:left |
+		       z:right |
+		       z:pace |
+		       z:auto-pace |
+		       z:no-pace |
+		       z:rewind-off |
+		       z:rewind-on |
+		       z:cut |
+		       z:partial-cut">
     <xsl:call-template name="command"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
 
   <!-- Single parameter commands -->
-  <xsl:template match="z:cpcl/z:encoding |
-		       z:cpcl/z:count">
+  <xsl:template match="z:encoding |
+		       z:count |
+		       z:pattern |
+		       z:rotate |
+		       z:contrast |
+		       z:tone |
+		       z:page-width |
+		       z:pw |
+		       z:wait |
+		       z:pre-tension |
+		       z:post-tension |
+		       z:speed |
+		       z:setsp |
+		       z:underline |
+		       z:on-feed |
+		       z:prefeed |
+		       z:postfeed |
+		       z:country |
+		       z:beep |
+		       z:cut-at">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
     <xsl:value-of select="text()"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
 
-  <!-- Text commands -->
-  <xsl:template match="z:cpcl/z:text |
-		       z:cpcl/z:t |
-		       z:cpcl/z:vtext |
-		       z:cpcl/z:vt |
-		       z:cpcl/z:text90 |
-		       z:cpcl/z:t90 |
-		       z:cpcl/z:text180 |
-		       z:cpcl/z:t180 |
-		       z:cpcl/z:text270 |
-		       z:cpcl/z:t270">
+  <!-- Text commands:
+
+       {command} {font} {size} {x} {y} {data}
+  -->
+  <xsl:template match="z:text |
+		       z:t |
+		       z:vtext |
+		       z:vt |
+		       z:text90 |
+		       z:t90 |
+		       z:text180 |
+		       z:t180 |
+		       z:text270 |
+		       z:t270">
     <xsl:call-template name="command"/>
-    <xsl:call-template name="text-attributes"/>
     <xsl:text> </xsl:text>
-    <xsl:value-of select="text()"/>
-    <xsl:call-template name="crlf"/>
+    <xsl:call-template name="font-attributes"/>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:choose>
+      <xsl:when test="*">
+	<xsl:call-template name="crlf"/>
+	<xsl:apply-templates/>
+      </xsl:when>
+      <xsl:otherwise>
+	<xsl:text> </xsl:text>
+	<xsl:value-of select="text()"/>
+	<xsl:call-template name="crlf"/>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
-  <xsl:template name="text-attributes">
-    <xsl:text> </xsl:text>
+  <xsl:template name="font-attributes">
     <xsl:choose>
       <xsl:when test="@font"><xsl:value-of select="@font"/></xsl:when>
       <xsl:when test="@fg"><xsl:text>FG</xsl:text></xsl:when>
@@ -124,6 +170,23 @@
       <xsl:when test="@fg"><xsl:value-of select="@fg"/></xsl:when>
       <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <!-- Scalable text commands
+
+       {command} {name} {width} {height} {x} {y} {data}
+  -->
+  <xsl:template match="z:scale-text |
+		       z:st |
+		       z:vscale-text |
+		       z:vst |
+		       z:scale-to-fit |
+		       z:stf |
+		       z:vscale-to-fit |
+		       z:vstf">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:call-template name="scalable-font-attributes"/>
     <xsl:text> </xsl:text>
     <xsl:choose>
       <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
@@ -134,12 +197,35 @@
       <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
       <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="text()"/>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+  <xsl:template name="scalable-font-attributes">
+    <xsl:choose>
+      <xsl:when test="@name"><xsl:value-of select="@name"/></xsl:when>
+      <xsl:when test="@font"><xsl:value-of select="@font"/></xsl:when>
+      <xsl:otherwise><xsl:text>4</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
+      <xsl:when test="@scale"><xsl:value-of select="@scale"/></xsl:when>
+      <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
+      <xsl:when test="@scale"><xsl:value-of select="@scale"/></xsl:when>
+      <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
-  <!-- Font group command -->
-  <xsl:template match="z:cpcl/z:fg |
-		       z:cpcl/z:concat/z:fg |
-		       z:cpcl/z:vconcat/z:fg">
+  <!-- Font group command:
+
+       {command} {fg fn fs} [fn fs] ...
+  -->
+  <xsl:template match="z:fg">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
     <xsl:choose>
@@ -162,9 +248,15 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- Text concatenation commands -->
-  <xsl:template match="z:cpcl/z:concat |
-		       z:cpcl/z:vconcat">
+  <!-- Text concatenation commands:
+
+       {command} {x} {y}
+       ( {font} {size} / <ST> {name} {width} {height} ) {offset} {data}
+       ...
+       <ENDCONCAT>
+  -->
+  <xsl:template match="z:concat |
+		       z:vconcat">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
     <xsl:choose>
@@ -182,18 +274,26 @@
     <xsl:call-template name="crlf"/>
   </xsl:template>
   <xsl:template match="z:concat/z:text |
-		       z:vconcat/z:text">
-    <xsl:choose>
-      <xsl:when test="@font"><xsl:value-of select="@font"/></xsl:when>
-      <xsl:when test="@fg"><xsl:text>FG</xsl:text></xsl:when>
-      <xsl:otherwise><xsl:text>4</xsl:text></xsl:otherwise>
-    </xsl:choose>
+		       z:concat/z:t |
+		       z:vconcat/z:text |
+		       z:vconcat/z:t">
+    <xsl:call-template name="font-attributes"/>
     <xsl:text> </xsl:text>
     <xsl:choose>
-      <xsl:when test="@size"><xsl:value-of select="@size"/></xsl:when>
-      <xsl:when test="@fg"><xsl:value-of select="@fg"/></xsl:when>
+      <xsl:when test="@offset"><xsl:value-of select="@offset"/></xsl:when>
       <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="text()"/>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+  <xsl:template match="z:concat/z:scale-text |
+		       z:concat/z:st |
+		       z:vconcat/z:scale-text |
+		       z:vconcat/z:st">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:call-template name="scalable-font-attributes"/>
     <xsl:text> </xsl:text>
     <xsl:choose>
       <xsl:when test="@offset"><xsl:value-of select="@offset"/></xsl:when>
@@ -204,9 +304,17 @@
     <xsl:call-template name="crlf"/>
   </xsl:template>
 
-  <!-- Multiline commands -->
-  <xsl:template match="z:cpcl/z:multiline |
-		       z:cpcl/z:ml">
+  <!-- Multiline commands:
+
+       {command} {height}
+       {text} {font} {size} {x} {y}
+       {data}
+       ...
+       {data}
+       <ENDMULTILINE>
+  -->
+  <xsl:template match="z:multiline |
+		       z:ml">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
     <xsl:choose>
@@ -214,21 +322,16 @@
       <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:call-template name="crlf"/>
-    <xsl:text>TEXT</xsl:text>
-    <xsl:call-template name="text-attributes"/>
-    <xsl:call-template name="crlf"/>
     <xsl:apply-templates/>
     <xsl:text>END</xsl:text><xsl:call-template name="command"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
-  <xsl:template match="z:multiline/z:line |
-		       z:ml/z:line">
-    <xsl:value-of select="text()"/>
-    <xsl:call-template name="crlf"/>
-  </xsl:template>
 
-  <!-- Set magnification command -->
-  <xsl:template match="z:cpcl/z:setmag">
+  <!-- Set magnification command:
+
+       {command} {w} {h}
+  -->
+  <xsl:template match="z:setmag">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
     <xsl:choose>
@@ -240,6 +343,90 @@
     <xsl:choose>
       <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
       <xsl:when test="@scale"><xsl:value-of select="@scale"/></xsl:when>
+      <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+
+  <!-- Barcode commands:
+
+      {command} {type} {width} {ratio} {height} {x} {y} {data}
+  -->
+  <xsl:template match="z:barcode |
+		       z:b |
+		       z:vbarcode |
+		       z:vb">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@type"><xsl:value-of select="@type"/></xsl:when>
+      <xsl:otherwise><xsl:text>128</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
+      <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@ratio"><xsl:value-of select="@ratio"/></xsl:when>
+      <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
+      <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="text()"/>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+
+  <!-- Line drawing commands:
+
+       {command} {x0} {y0} {x1} {y1} {width}
+  -->
+  <xsl:template match="z:box |
+		       z:line |
+		       z:inverse-line">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@x0"><xsl:value-of select="@x0"/></xsl:when>
+      <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@y0"><xsl:value-of select="@y0"/></xsl:when>
+      <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@x1"><xsl:value-of select="@x1"/></xsl:when>
+      <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@y1"><xsl:value-of select="@y1"/></xsl:when>
+      <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
       <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:call-template name="crlf"/>
