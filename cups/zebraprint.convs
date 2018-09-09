@@ -1,0 +1,8 @@
+# CPCL MIME type conversions
+#
+application/x-cpcl+xml  application/x-cpcl  100  xmltocpcl
+
+# Treat all printers as supporting CPCL.  This avoids the need for
+# users to manually patch the Zebra PPDs.
+#
+application/x-cpcl  application/vnd.cups-raw  0  -

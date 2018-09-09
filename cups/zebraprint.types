@@ -1,0 +1,8 @@
+# CPCL MIME types
+#
+# We need to use a non-default priority since the upstream CUPS code
+# includes application/vnd.recordare.musicxml+xml which erroneously
+# claims all files with the extension ".xml"
+#
+application/x-cpcl+xml		priority(200) (string(0,"<?xml") + contains(0,1024,"<cpcl"))
+application/x-cpcl
