@@ -22,6 +22,11 @@
 
   <!-- Root element -->
   <xsl:template match="/z:cpcl">
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <!-- Print element -->
+  <xsl:template match="z:print">
     <xsl:text>! </xsl:text>
     <xsl:choose>
       <xsl:when test="@offset"><xsl:value-of select="@offset"/></xsl:when>

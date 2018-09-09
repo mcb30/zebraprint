@@ -10,6 +10,13 @@
   <!-- CPCL document -->
   <xs:complexType name="cpcl">
     <xs:sequence>
+      <xs:element name="print" type="print" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Print element -->
+  <xs:complexType name="print">
+    <xs:sequence>
       <xs:choice maxOccurs="unbounded">
 	<xs:element name="text" type="text"/>
 	<xs:element name="form" type="elementOnly"/>

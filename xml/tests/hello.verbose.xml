@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl" offset="0" xdpi="200"
-      ydpi="200" height="210" qty="1">
-  <text font="4" size="0" x="30" y="40">Hello World</text>
-  <form/>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print offset="0" xdpi="200" ydpi="200" height="210" qty="1">
+    <text font="4" size="0" x="30" y="40">Hello World</text>
+    <form/>
+  </print>
 </cpcl>

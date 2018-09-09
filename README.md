@@ -25,9 +25,11 @@ constructed using XML-based toolchains.  The same example page in
 CPCL/XML would be:
 
     <?xml version="1.0" encoding="utf-8"?>
-    <cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl" height="210">
-      <text x="30" y="40">Hello World</text>
-      <form/>
+    <cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+      <print height="210">
+        <text x="30" y="40">Hello World</text>
+        <form/>
+      </print>
     </cpcl>
 
 Installing this package will allow you to print CPCL or CPCL/XML
