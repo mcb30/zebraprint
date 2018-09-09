@@ -19,10 +19,10 @@ barcodes, graphics, etc.  An example page in CPCL could be:
     FORM
     PRINT
 
-This package defines an XML mapping of CPCL: CPCL/XML (with MIME type
-`application/x-cpcl+xml`), allowing CPCL documents to be constructed
-using XML-based toolchains.  The same example page in CPCL/XML would
-be:
+This package defines an XML mapping of CPCL: [CPCL/XML](xml/) (with
+MIME type `application/x-cpcl+xml`), allowing CPCL documents to be
+constructed using XML-based toolchains.  The same example page in
+CPCL/XML would be:
 
     <?xml version="1.0" encoding="utf-8"?>
     <cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl" height="210">
