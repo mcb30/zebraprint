@@ -50,8 +50,6 @@
       <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:call-template name="crlf"/>
-    <xsl:text>SETMAG 0 0</xsl:text>
-    <xsl:call-template name="crlf"/>
     <xsl:apply-templates/>
     <xsl:text>PRINT</xsl:text>
     <xsl:call-template name="crlf"/>
