@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="200">
+    <encoding>GB18030</encoding>
+    <text font="GBUNSG24.CPF" size="0" x="20" y="30">Font: GBUNSG24 ‚t‚u</text>
+    <encoding>ASCII</encoding>
+    <text font="7" size="0" x="20" y="80">Font 7, Size 0</text>
+  </print>
+</cpcl>

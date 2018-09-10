@@ -18,8 +18,9 @@
   <xs:complexType name="print">
     <xs:sequence>
       <xs:choice maxOccurs="unbounded">
-	<xs:element name="text" type="text"/>
+	<xs:element name="encoding" type="encoding"/>
 	<xs:element name="form" type="elementOnly"/>
+	<xs:element name="text" type="text"/>
       </xs:choice>
     </xs:sequence>
     <xs:attribute name="offset" type="xs:integer"/>
@@ -33,9 +34,18 @@
   <!-- Bare element -->
   <xs:complexType name="elementOnly" />
 
+  <!-- Encoding element -->
+  <xs:simpleType name="encoding">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ASCII"/>
+      <xs:enumeration value="UTF-8"/>
+      <xs:enumeration value="GB18030"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <!-- Text element -->
   <xs:complexType name="text" mixed="true">
-    <xs:attribute name="font" type="xs:integer"/>
+    <xs:attribute name="font" type="xs:string"/>
     <xs:attribute name="size" type="xs:integer"/>
     <xs:attribute name="fg" type="xs:integer"/>
     <xs:attribute name="x" type="xs:integer"/>
