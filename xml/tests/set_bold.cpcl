@@ -1,0 +1,3 @@
+! U1 SETBOLD 2
+This text is in bold ! U1 SETBOLD 0
+but this text is normal.

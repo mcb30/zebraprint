@@ -1,0 +1,12 @@
+! U1 JOURNAL
+! U1 SETLP 4 0 47
+  YOURCO RETAIL STORES
+! U1 SETLP 7 0 24
+  14:40 PM      Thursday, 06/04/20
+  Quantity  Item         Unit    Total
+  1         Babelfish    $4.20   $4.20
+            Tax:            5%   $0.21
+! U1 SETSP 5
+      Total:! U1 SETSP 0
+                $4.41
+Thank you for shopping at YOURCO

@@ -1,0 +1,6 @@
+! 0 200 200 210 1
+CENTER
+TEXT 5 0 0 10 beeps for two seconds
+BEEP 16
+FORM
+PRINT

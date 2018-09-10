@@ -1,0 +1,9 @@
+! 0 200 200 250 1
+FG 3 0 0 7 0 5 0 4 0
+VT FG 3 10 250 Ketchup
+VT FG 3 70 250 Fancy Ketchup
+VT FG 3 120 250 Extra Fancy Ketchup
+VT FG 3 180 250 Large Size Extra Fancy Ketchup
+FORM
+PRINT
+

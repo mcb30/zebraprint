@@ -1,0 +1,16 @@
+! UTILITIES
+IN-MILLIMETERS
+SETLP 4 0 5
+COUNTRY USA
+PRINT
+This is text with
+Country set to 
+USA
+#$@[\]^‘{|}~
+! UTILITIES
+COUNTRY ITALY
+PRINT
+This is text with
+Country set to 
+ITALY
+#$@[\]^‘{|}~

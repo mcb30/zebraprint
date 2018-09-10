@@ -1,0 +1,10 @@
+! 0 200 200 210 1
+ML 47
+TEXT 4 0 10 20
+1st line of text
+2nd line of text
+:
+Nth line of text
+ENDML
+FORM
+PRINT
