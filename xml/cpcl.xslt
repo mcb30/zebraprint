@@ -60,6 +60,17 @@
     <xsl:call-template name="crlf"/>
   </xsl:template>
 
+  <!-- Utilities element -->
+  <xsl:template match="z:utilities |
+		       z:u">
+    <xsl:text>! </xsl:text>
+    <xsl:call-template name="command"/>
+    <xsl:call-template name="crlf"/>
+    <xsl:apply-templates/>
+    <xsl:text>PRINT</xsl:text>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+
   <!-- Fail on unknown elements -->
   <xsl:template match="*">
     <xsl:message terminate="yes">Unrecognised element:
@@ -459,6 +470,30 @@
     <xsl:text> </xsl:text>
     <xsl:choose>
       <xsl:when test="@delay"><xsl:value-of select="@delay"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+
+  <!-- Line printer font command:
+
+       SETLP {font name or number} {size} {unit height}
+  -->
+  <xsl:template match="z:setlp">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@font"><xsl:value-of select="@font"/></xsl:when>
+      <xsl:otherwise><xsl:text>5</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@size"><xsl:value-of select="@size"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
       <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:call-template name="crlf"/>

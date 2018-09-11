@@ -10,7 +10,10 @@
   <!-- CPCL document -->
   <xs:complexType name="cpcl">
     <xs:sequence>
-      <xs:element name="print" type="print" maxOccurs="unbounded"/>
+      <xs:choice maxOccurs="unbounded">
+	<xs:element name="print" type="print"/>
+	<xs:element name="utilities" type="print"/>
+      </xs:choice>
     </xs:sequence>
   </xs:complexType>
 
@@ -20,6 +23,8 @@
       <xs:choice maxOccurs="unbounded">
 	<xs:element name="encoding" type="encoding"/>
 	<xs:element name="form" type="elementOnly"/>
+	<xs:element name="pw" type="xs:integer"/>
+	<xs:element name="setlp" type="setlp"/>
 	<xs:element name="text" type="text"/>
       </xs:choice>
     </xs:sequence>
@@ -42,6 +47,12 @@
       <xs:enumeration value="GB18030"/>
     </xs:restriction>
   </xs:simpleType>
+
+  <!-- Set line printing font element -->
+  <xs:complexType name="setlp">
+    <xs:attribute name="font" type="xs:string"/>
+    <xs:attribute name="height" type="xs:integer"/>
+  </xs:complexType>
 
   <!-- Text element -->
   <xs:complexType name="text" mixed="true">
