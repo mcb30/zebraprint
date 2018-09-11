@@ -81,16 +81,15 @@
 		       z:in-centimeters |
 		       z:in-millimeters |
 		       z:in-dots |
-		       z:center |
-		       z:left |
-		       z:right |
 		       z:pace |
 		       z:auto-pace |
 		       z:no-pace |
 		       z:rewind-off |
 		       z:rewind-on |
 		       z:cut |
-		       z:partial-cut">
+		       z:partial-cut |
+		       z:label |
+		       z:bar-sense">
     <xsl:call-template name="command"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
@@ -433,6 +432,34 @@
     <xsl:choose>
       <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
       <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+
+  <!-- Justification commands -->
+  <xsl:template match="z:left |
+		       z:center |
+		       z:right">
+    <xsl:call-template name="command"/>
+    <xsl:if test="@end">
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="@end"/>
+    </xsl:if>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+
+  <!-- Present-at commands -->
+  <xsl:template match="z:present-at">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@length"><xsl:value-of select="@length"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@delay"><xsl:value-of select="@delay"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:call-template name="crlf"/>
   </xsl:template>
