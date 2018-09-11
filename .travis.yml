@@ -7,6 +7,9 @@ addons:
     packages:
       - libxml2-utils
       - xsltproc
+      - libxml2-dev
+      - libxslt-dev
+      - valgrind
 
 script:
   - make test
