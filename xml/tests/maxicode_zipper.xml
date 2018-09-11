@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="600">
+    <journal/>
+    <b type="MAXICODE" x="20" y="20"/>
+    <cc>12345</cc>
+    <msg>This is a MAXICODE low priority message.</msg>
+    <sc>12345</sc>
+    <post>02886</post>
+    <zipper>1</zipper>
+    <endmaxicode/>
+  </print>
+</cpcl>

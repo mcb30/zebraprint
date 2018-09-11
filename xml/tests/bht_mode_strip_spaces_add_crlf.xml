@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print>
+    <srf-access/>
+    <bht-mode>STRIP-ADD-CRLF</bht-mode>
+    <end-srf-access/>
+  </print>
+</cpcl>

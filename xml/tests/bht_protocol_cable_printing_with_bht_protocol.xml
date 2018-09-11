@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print>
+    <srf-access/>
+    <bht-protocol>BHT</bht-protocol>
+    <bht-protocol>CABLE</bht-protocol>
+    <bht-baud>19200</bht-baud>
+    <bht-mode>STRIP-ADD-CRLF</bht-mode>
+    <end-srf-access/>
+  </print>
+</cpcl>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="500">
+    <pcx x="0" y="30"/>
+    <input x="2" y="(IMAGE.PCX)"/>
+    <input x="3" y="(ENDPCX.LBL)"/>
+    <form/>
+  </print>
+</cpcl>

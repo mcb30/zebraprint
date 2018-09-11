@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="1">
+    <in-inches/>
+    <t font="4" x="0" y="0">1 cm = 0.3937”</t>
+    <in-dots/>
+    <t font="4" y="48">1 mm = 8 dots</t>
+    <b type="128" width="1" ratio="1" height="48" x="16" y="112">UNITS</b>
+    <t font="4" x="48" y="160">UNITS</t>
+    <form/>
+  </print>
+</cpcl>

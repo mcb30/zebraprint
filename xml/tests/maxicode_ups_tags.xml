@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="600">
+    <journal/>
+    <b type="MAXICODE" x="20" y="20"/>
+    <val>Y</val>
+    <staddr>30 PLAN WAY</staddr>
+    <weigh>210</weigh>
+    <shipid>42</shipid>
+    <pickday>193</pickday>
+    <shipper>12345</shipper>
+    <tn>1Z12345675</tn>
+    <cc>860</cc>
+    <sc>1</sc>
+    <post>02886</post>
+    <zipper>1</zipper>
+    <shipper>12345E</shipper>
+    <nx>1/2</nx>
+    <ups5>1</ups5>
+    <city>WARWICK</city>
+    <st>RI</st>
+    <endmaxicode/>
+  </print>
+</cpcl>

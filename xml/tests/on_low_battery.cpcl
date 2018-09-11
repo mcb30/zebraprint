@@ -1,1 +1,3 @@
-!UTILITIES OLB ALERT “Low Battery Alert!” ALARM 40
+! UTILITIES
+OLB ALERT “Low Battery Alert!” ALARM 40
+PRINT
