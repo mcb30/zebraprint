@@ -21,23 +21,169 @@
   <xs:complexType name="print">
     <xs:sequence>
       <xs:choice maxOccurs="unbounded">
+	<xs:element name="auto-pace" type="element-only"/>
+	<xs:element name="bar-sense" type="element-only"/>
+	<xs:element name="barcode" type="barcode"/>
+	<xs:element name="beep" type="xs:integer"/>
+	<xs:element name="box" type="line"/>
+	<xs:element name="center" type="justification"/>
+	<xs:element name="concat" type="concat"/>
+	<xs:element name="contrast" type="xs:integer"/>
+	<xs:element name="count" type="xs:integer"/>
+	<xs:element name="cut" type="element-only"/>
+	<xs:element name="cut-at" type="xs:integer"/>
 	<xs:element name="encoding" type="encoding"/>
-	<xs:element name="form" type="elementOnly"/>
-	<xs:element name="pw" type="xs:integer"/>
+	<xs:element name="form" type="element-only"/>
+	<xs:element name="gap-sense" type="element-only"/>
+	<xs:element name="il" type="line"/>
+	<xs:element name="in-centimeters" type="element-only"/>
+	<xs:element name="in-dots" type="element-only"/>
+	<xs:element name="in-inches" type="element-only"/>
+	<xs:element name="in-millimeters" type="element-only"/>
+	<xs:element name="inverse-line" type="line"/>
+	<xs:element name="journal" type="element-only"/>
+	<xs:element name="l" type="line"/>
+	<xs:element name="label" type="element-only"/>
+	<xs:element name="left" type="justification"/>
+	<xs:element name="line" type="line"/>
+	<xs:element name="ml" type="multiline"/>
+	<xs:element name="multiline" type="multiline"/>
+	<xs:element name="no-pace" type="element-only"/>
+	<xs:element name="pace" type="element-only"/>
+	<xs:element name="page-width" type="xs:decimal"/>
+	<xs:element name="partial-cut" type="element-only"/>
+	<xs:element name="pattern" type="pattern"/>
+	<xs:element name="postfeed" type="xs:decimal"/>
+	<xs:element name="prefeed" type="xs:decimal"/>
+	<xs:element name="present-at" type="present-at"/>
+	<xs:element name="pw" type="xs:decimal"/>
+	<xs:element name="rewind-off" type="element-only"/>
+	<xs:element name="rewind-on" type="element-only"/>
+	<xs:element name="right" type="justification"/>
+	<xs:element name="rotate" type="xs:integer"/>
+	<xs:element name="scale-text" type="scale-text"/>
+	<xs:element name="scale-to-fit" type="scale-text"/>
 	<xs:element name="setlp" type="setlp"/>
+	<xs:element name="setsp" type="xs:decimal"/>
+	<xs:element name="setmag" type="setmag"/>
+	<xs:element name="speed" type="xs:integer"/>
+	<xs:element name="st" type="scale-text"/>
+	<xs:element name="stf" type="scale-text"/>
+	<xs:element name="t" type="text"/>
+	<xs:element name="t180" type="text"/>
+	<xs:element name="t270" type="text"/>
+	<xs:element name="t90" type="text"/>
 	<xs:element name="text" type="text"/>
+	<xs:element name="text180" type="text"/>
+	<xs:element name="text270" type="text"/>
+	<xs:element name="text90" type="text"/>
+	<xs:element name="tone" type="xs:integer"/>
+	<xs:element name="vbarcode" type="barcode"/>
+	<xs:element name="vscale-text" type="scale-text"/>
+	<xs:element name="vscale-to-fit" type="scale-text"/>
+	<xs:element name="vst" type="scale-text"/>
+	<xs:element name="vstf" type="scale-text"/>
+	<xs:element name="vt" type="text"/>
+	<xs:element name="vt180" type="text"/>
+	<xs:element name="vt270" type="text"/>
+	<xs:element name="vt90" type="text"/>
+	<xs:element name="vtext" type="text"/>
+	<xs:element name="vtext180" type="text"/>
+	<xs:element name="vtext270" type="text"/>
+	<xs:element name="vtext90" type="text"/>
+	<xs:element name="wait" type="xs:integer"/>
       </xs:choice>
     </xs:sequence>
-    <xs:attribute name="offset" type="xs:integer"/>
+    <xs:attribute name="offset" type="xs:decimal"/>
     <xs:attribute name="dpi" type="xs:integer"/>
     <xs:attribute name="xdpi" type="xs:integer"/>
     <xs:attribute name="ydpi" type="xs:integer"/>
-    <xs:attribute name="height" type="xs:integer"/>
+    <xs:attribute name="height" type="xs:decimal"/>
     <xs:attribute name="qty" type="xs:integer"/>
   </xs:complexType>
 
+  <!-- Barcode element -->
+  <xs:complexType name="barcode">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attribute name="type">
+	  <xs:simpleType>
+	    <xs:restriction base="xs:string">
+	      <xs:enumeration value="UPCA"/>
+	      <xs:enumeration value="UPCA2"/>
+	      <xs:enumeration value="UPCA5"/>
+	      <xs:enumeration value="UPCE"/>
+	      <xs:enumeration value="UPCE2"/>
+	      <xs:enumeration value="UPCE5"/>
+	      <xs:enumeration value="EAN13"/>
+	      <xs:enumeration value="EAN132"/>
+	      <xs:enumeration value="EAN135"/>
+	      <xs:enumeration value="EAN8"/>
+	      <xs:enumeration value="EAN82"/>
+	      <xs:enumeration value="EAN85"/>
+	      <xs:enumeration value="39"/>
+	      <xs:enumeration value="39C"/>
+	      <xs:enumeration value="F39"/>
+	      <xs:enumeration value="F39C"/>
+	      <xs:enumeration value="93"/>
+	      <xs:enumeration value="I2OF5"/>
+	      <xs:enumeration value="I2OF5C"/>
+	      <xs:enumeration value="I2OF5G"/>
+	      <xs:enumeration value="128"/>
+	      <xs:enumeration value="UCCEAN128"/>
+	      <xs:enumeration value="CODABAR"/>
+	      <xs:enumeration value="CODABAR16"/>
+	      <xs:enumeration value="MSI"/>
+	      <xs:enumeration value="MSI10"/>
+	      <xs:enumeration value="MSI1010"/>
+	      <xs:enumeration value="MSI1110"/>
+	      <xs:enumeration value="POSTNET"/>
+	      <xs:enumeration value="FIM"/>
+	    </xs:restriction>
+	  </xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="width" type="xs:integer"/>
+	<xs:attribute name="ratio" type="xs:integer"/>
+	<xs:attribute name="height" type="xs:integer"/>
+	<xs:attribute name="x" type="xs:decimal"/>
+	<xs:attribute name="y" type="xs:decimal"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- Concatenation element -->
+  <xs:complexType name="concat">
+    <xs:sequence>
+      <xs:choice maxOccurs="unbounded">
+	<xs:element name="text" type="concat-text"/>
+	<xs:element name="st" type="concat-scale-text"/>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="x" type="xs:decimal"/>
+    <xs:attribute name="y" type="xs:decimal"/>
+  </xs:complexType>
+  <xs:complexType name="concat-text">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attribute name="font" type="xs:string"/>
+	<xs:attribute name="size" type="xs:integer"/>
+	<xs:attribute name="offset" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="concat-scale-text">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attribute name="name" type="xs:string"/>
+	<xs:attribute name="width" type="xs:integer"/>
+	<xs:attribute name="height" type="xs:integer"/>
+	<xs:attribute name="offset" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <!-- Bare element -->
-  <xs:complexType name="elementOnly" />
+  <xs:complexType name="element-only" />
 
   <!-- Encoding element -->
   <xs:simpleType name="encoding">
@@ -48,19 +194,93 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <!-- Justification element -->
+  <xs:complexType name="justification">
+    <xs:attribute name="end" type="xs:integer"/>
+  </xs:complexType>
+
+  <!-- Line element -->
+  <xs:complexType name="line">
+    <xs:attribute name="x0" type="xs:decimal"/>
+    <xs:attribute name="y0" type="xs:decimal"/>
+    <xs:attribute name="x1" type="xs:decimal"/>
+    <xs:attribute name="y1" type="xs:decimal"/>
+    <xs:attribute name="x" type="xs:decimal"/>
+    <xs:attribute name="y" type="xs:decimal"/>
+    <xs:attribute name="width" type="xs:integer"/>
+  </xs:complexType>
+
+  <!-- Multiline element -->
+  <xs:complexType name="multiline">
+    <xs:sequence>
+      <xs:element name="text" type="multiline-text"/>
+    </xs:sequence>
+    <xs:attribute name="height" type="xs:integer"/>
+  </xs:complexType>
+  <xs:complexType name="multiline-text">
+    <xs:sequence>
+      <xs:element name="item" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="font" type="xs:string"/>
+    <xs:attribute name="size" type="xs:integer"/>
+    <xs:attribute name="fg" type="xs:integer"/>
+    <xs:attribute name="x" type="xs:decimal"/>
+    <xs:attribute name="y" type="xs:decimal"/>
+  </xs:complexType>
+
+  <!-- Pattern element -->
+  <xs:simpleType name="pattern">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="100"/>
+      <xs:maxInclusive value="106"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Present-at element -->
+  <xs:complexType name="present-at">
+    <xs:attribute name="length" type="xs:integer"/>
+    <xs:attribute name="delay" type="xs:integer"/>
+  </xs:complexType>
+
+  <!-- Scalable text element -->
+  <xs:complexType name="scale-text">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attribute name="name" type="xs:string"/>
+	<xs:attribute name="font" type="xs:string"/>
+	<xs:attribute name="width" type="xs:integer"/>
+	<xs:attribute name="height" type="xs:integer"/>
+	<xs:attribute name="scale" type="xs:integer"/>
+	<xs:attribute name="x" type="xs:decimal"/>
+	<xs:attribute name="y" type="xs:decimal"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <!-- Set line printing font element -->
   <xs:complexType name="setlp">
     <xs:attribute name="font" type="xs:string"/>
     <xs:attribute name="height" type="xs:integer"/>
   </xs:complexType>
 
+  <!-- Set magnification element -->
+  <xs:complexType name="setmag">
+    <xs:attribute name="width" type="xs:integer"/>
+    <xs:attribute name="height" type="xs:integer"/>
+    <xs:attribute name="scale" type="xs:integer"/>
+  </xs:complexType>
+
   <!-- Text element -->
-  <xs:complexType name="text" mixed="true">
-    <xs:attribute name="font" type="xs:string"/>
-    <xs:attribute name="size" type="xs:integer"/>
-    <xs:attribute name="fg" type="xs:integer"/>
-    <xs:attribute name="x" type="xs:integer"/>
-    <xs:attribute name="y" type="xs:integer"/>
+  <xs:complexType name="text">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attribute name="font" type="xs:string"/>
+	<xs:attribute name="size" type="xs:integer"/>
+	<xs:attribute name="fg" type="xs:integer"/>
+	<xs:attribute name="x" type="xs:decimal"/>
+	<xs:attribute name="y" type="xs:decimal"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
 </xs:schema>
