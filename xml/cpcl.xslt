@@ -401,7 +401,9 @@
   -->
   <xsl:template match="z:box |
 		       z:line |
-		       z:inverse-line">
+		       z:l |
+		       z:inverse-line |
+		       z:il">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
     <xsl:choose>
