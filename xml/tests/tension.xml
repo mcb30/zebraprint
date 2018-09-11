@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="150">
+    <pre-tension>30</pre-tension>
+    <text font="5" y="20">ADJUSTS TENSION</text>
+  </print>
+</cpcl>

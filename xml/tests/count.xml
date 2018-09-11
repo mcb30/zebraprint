@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210" qty="3">
+    <center/>
+    <text font="4" y="50">TESTING 001</text>
+    <count>1</count>
+    <text font="7" y="100">Barcode Value is 123456789</text>
+    <count>-10</count>
+    <barcode type="128" width="1" ratio="1" height="50" x="0" y="130">123456789</barcode>
+    <count>-10</count>
+    <form/>
+  </print>
+</cpcl>

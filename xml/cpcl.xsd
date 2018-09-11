@@ -31,6 +31,7 @@
 	<xs:element name="concat" type="concat"/>
 	<xs:element name="contrast" type="xs:integer"/>
 	<xs:element name="count" type="xs:integer"/>
+	<xs:element name="country" type="xs:string"/>
 	<xs:element name="cut" type="element-only"/>
 	<xs:element name="cut-at" type="xs:integer"/>
 	<xs:element name="encoding" type="encoding"/>
@@ -51,11 +52,13 @@
 	<xs:element name="ml" type="multiline"/>
 	<xs:element name="multiline" type="multiline"/>
 	<xs:element name="no-pace" type="element-only"/>
+	<xs:element name="on-feed" type="xs:string"/>
 	<xs:element name="pace" type="element-only"/>
 	<xs:element name="page-width" type="xs:decimal"/>
 	<xs:element name="partial-cut" type="element-only"/>
 	<xs:element name="pattern" type="pattern"/>
 	<xs:element name="postfeed" type="xs:decimal"/>
+	<xs:element name="pre-tension" type="xs:decimal"/>
 	<xs:element name="prefeed" type="xs:decimal"/>
 	<xs:element name="present-at" type="present-at"/>
 	<xs:element name="pw" type="xs:decimal"/>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="80">
+    <in-millimeters/>
+    <journal/>
+    <center/>
+    <country>USA</country>
+    <text font="4" y="8">COUNTRY IS USA</text>
+    <text font="4" y="15">#$@[\]^‘{|}~</text>
+    <country>FRANCE</country>
+    <text font="4" y="28">COUNTRY IS FRANCE</text>
+    <text font="4" y="35">#$@[\]^‘{|}~</text>
+  </print>
+</cpcl>

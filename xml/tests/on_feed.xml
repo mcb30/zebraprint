@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="300">
+    <on-feed>REPRINT</on-feed>
+    <center/>
+    <journal/>
+    <text font="4" size="1" x="0" y="20">PRESS FEED KEY</text>
+    <text font="4" size="1" x="0" y="100">TO REPRINT</text>
+    <text font="4" size="1" x="0" y="180">THIS TEXT</text>
+  </print>
+</cpcl>
