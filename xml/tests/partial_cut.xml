@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="1.5">
+    <in-inches/>
+    <journal/>
+    <center/>
+    <text font="4" y=".15">PARTIAL CUT</text>
+    <text font="4" y=".5">EXAMPLE</text>
+    <partial-cut/>
+  </print>
+</cpcl>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="25">
+    <in-millimeters/>
+    <journal/>
+    <center/>
+    <text font="5" size="1" y="5">A COMMENT</text>
+    <form/>
+  </print>
+</cpcl>

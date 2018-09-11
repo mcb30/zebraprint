@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="440">
+    <center/>
+    <text font="4" size="1" x="0" y="50">Rotate Strings</text>
+    <rotate>45</rotate>
+    <concat x="50" y="300">
+      <st name="PLL_LAT.CSF" width="20" height="20" offset="20">$</st>
+      <st name="PLL_LAT.CSF" width="40" height="40" offset="0">22</st>
+      <st name="PLL_LAT.CSF" width="20" height="20" offset="0">99</st>
+    </concat>
+    <form/>
+  </print>
+</cpcl>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="150">
+    <rewind-off/>
+    <text font="5" y="20">TURNS REWIND OFF</text>
+  </print>
+</cpcl>

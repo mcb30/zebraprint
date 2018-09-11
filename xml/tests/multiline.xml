@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <ml height="47">
+      <text font="4" x="10" y="20">
+	<item>1st line of text</item>
+	<item>2nd line of text</item>
+	<item>:</item>
+	<item>Nth line of text</item>
+      </text>
+    </ml>
+    <form/>
+  </print>
+</cpcl>

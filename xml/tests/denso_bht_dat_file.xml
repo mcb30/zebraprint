@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="581">
+    <label/>
+    <contrast>0</contrast>
+    <tone>0</tone>
+    <speed>3</speed>
+    <page-width>240</page-width>
+    <bar-sense/>
+    <text90 font="4" size="3" x="36" y="288">$22.88</text90>
+    <text90 font="5" size="2" x="163" y="273">SWEATSHIRT</text90>
+    <vbarcode type="UPCA" width="2" ratio="1" height="45" x="139" y="576">04364503284</vbarcode>
+    <text90 font="7" x="191" y="511">043645032841</text90>
+    <text90 font="5" x="4" y="524">COMPARE AT</text90>
+    <text90 font="4" x="30" y="508">$ 30.00</text90>
+    <text90 font="5" x="115" y="575">ZD-180-KL</text90>
+    <text90 font="5" size="2" x="119" y="269">ALL COTTON</text90>
+    <text90 font="7" x="114" y="389">01/17/98</text90>
+    <text90 font="0" x="208" y="173">EA00-732-00560</text90>
+    <text90 font="5" x="82" y="519">ELSEWHERE</text90>
+    <box x0="189" y0="358" x1="217" y1="527" width="1"></box>
+    <form/>
+  </print>
+</cpcl>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="150">
+    <speed>4</speed>
+    <text font="5" y="20">PRINTS AT SPEED 4</text>
+    <form/>
+  </print>
+</cpcl>

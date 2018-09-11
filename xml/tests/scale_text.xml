@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="300">
+    <center/>
+    <scale-text name="PLL_LAT.CSF" width="10" height="10" x="0" y="10">10 POINT FONT</scale-text>
+    <scale-text name="PLL_LAT.CSF" width="20" height="10" x="0" y="80">WIDER FONT</scale-text>
+    <scale-text name="PLL_LAT.CSF" width="10" height="20" x="0" y="150">TALLER FONT</scale-text>
+    <form/>
+  </print>
+</cpcl>

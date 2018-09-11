@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="250" qty="1">
+    <center/>
+    <text font="7" x="0" y="20">CUT-AT EXAMPLE</text>
+    <cut/>
+    <cut-at>100</cut-at>
+    <form/>
+  </print>
+</cpcl>

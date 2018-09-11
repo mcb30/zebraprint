@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="100">
+    <in-millimeters/>
+    <center/>
+    <scale-to-fit name="PLL_LAT.CSF" width="40" height="10" x="0" y="10">SALE</scale-to-fit>
+    <scale-to-fit name="PLL_LAT.CSF" width="40" height="10" x="0" y="20">SALE PRICE</scale-to-fit>
+    <scale-to-fit name="PLL_LAT.CSF" width="40" height="20" x="0" y="30">SALE</scale-to-fit>
+    <form/>
+  </print>
+</cpcl>

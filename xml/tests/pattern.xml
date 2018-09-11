@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="700">
+    <pattern>101</pattern>
+    <line x0="10" y0="10" x1="160" y1="10" width="42"/>
+    <pattern>102</pattern>
+    <line x0="170" y0="10" x1="350" y1="10" width="42"/>
+    <pattern>103</pattern>
+    <line x0="10" y0="65" x1="160" y1="65" width="40"/>
+    <pattern>104</pattern>
+    <line x0="170" y0="65" x1="350" y1="65" width="40"/>
+    <pattern>105</pattern>
+    <line x0="10" y0="115" x1="160" y1="115" width="40"/>
+    <pattern>106</pattern>
+    <line x0="170" y0="115" x1="350" y1="115" width="40"/>
+    <pattern>106</pattern>
+    <st name="PLB_LAT.CSF" width="40" height="40" x="20" y="180">HELLO</st>
+    <form/>
+  </print>
+</cpcl>

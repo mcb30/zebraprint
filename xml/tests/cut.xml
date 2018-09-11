@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="1.5">
+    <in-inches/>
+    <center/>
+    <text font="4" x="0" y=".15">CUT COMMAND</text>
+    <text font="4" x="0" y=".5">EXAMPLE</text>
+    <cut/>
+  </print>
+</cpcl>

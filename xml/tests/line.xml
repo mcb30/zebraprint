@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <line x0="0" y0="0" x1="200" y1="0" width="1"/>
+    <line x0="0" y0="0" x1="200" y1="200" width="2"/>
+    <line x0="0" y0="0" x1="0" y1="200" width="3"/>
+    <form/>
+  </print>
+</cpcl>

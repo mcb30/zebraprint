@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <prefeed>40</prefeed>
+    <text font="7" y="20">PREFEED EXAMPLE</text>
+    <form/>
+  </print>
+</cpcl>

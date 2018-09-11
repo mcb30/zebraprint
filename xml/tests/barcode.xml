@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <barcode type="128" width="1" ratio="1" height="50" x="150" y="10">HORIZ.</barcode>
+    <text font="7" x="210" y="60">HORIZ.</text>
+    <vbarcode type="128" width="1" ratio="1" height="50" x="10" y="200">VERT.</vbarcode>
+    <vtext font="7" x="60" y="140">VERT.</vtext>
+    <form/>
+  </print>
+</cpcl>

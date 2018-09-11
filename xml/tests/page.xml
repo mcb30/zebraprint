@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210" qty="3">
+    <pace/>
+    <journal/>
+    <center/>
+    <text font="4" size="1" x="0" y="10">Print 3 labels</text>
+    <text font="4" size="1" x="0" y="90">Using PACE</text>
+  </print>
+</cpcl>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <center/>
+    <setmag width="1" height="1"/>
+    <text font="0" y="10">Font 0-0 at SETMAG 1 1</text>
+    <setmag width="1" height="2"/>
+    <text font="0" y="40">Font 0-0 at SETMAG 1 2</text>
+    <setmag width="2" height="1"/>
+    <text font="0" y="80">Font 0-0 at SETMAG 2 1</text>
+    <setmag width="2" height="2"/>
+    <text font="0" y="110">Font 0-0 at SETMAG 2 2</text>
+    <setmag width="2" height="4"/>
+    <text font="0" y="145">Font 0-0 at SETMAG 2 4</text>
+    <setmag width="0" height="0"/>
+    <form/>
+  </print>
+</cpcl>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="150" qty="5">
+    <wait>80</wait>
+    <text font="5" y="20">DELAY 10 SECONDS</text>
+    <form/>
+  </print>
+</cpcl>

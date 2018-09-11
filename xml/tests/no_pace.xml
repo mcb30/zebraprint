@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="250" qty="10">
+    <text font="7" size="0" x="0" y="10">AUTO-PACE EXAMPLE</text>
+    <auto-pace/>
+    <form/>
+  </print>
+  <print height="250" qty="10">
+    <text font="7" size="0" x="0" y="10">NO-PACE EXAMPLE</text>
+    <no-pace/>
+    <form/>
+  </print>
+</cpcl>

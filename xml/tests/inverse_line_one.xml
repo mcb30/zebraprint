@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <center/>
+    <text font="4" y="45">SAVE</text>
+    <text font="4" y="95">MORE</text>
+    <inverse-line x0="0" y0="45" x1="145" y1="45" width="45"></inverse-line>
+    <inverse-line x0="0" y0="95" x1="145" y1="95" width="45"></inverse-line>
+    <form/>
+  </print>
+</cpcl>

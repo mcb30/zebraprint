@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="250">
+    <text font="7" y="10">PRESENT-AT EXAMPLE</text>
+    <present-at length="80" delay="2"/>
+    <form/>
+  </print>
+</cpcl>

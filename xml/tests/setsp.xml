@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <t font="4" y="10">Normal Spacing</t>
+    <setsp>5</setsp>
+    <t font="4" y="50">Spread Spacing</t>
+    <setsp>0</setsp>
+    <t font="4" y="90">Normal Spacing</t>
+    <form/>
+  </print>
+</cpcl>

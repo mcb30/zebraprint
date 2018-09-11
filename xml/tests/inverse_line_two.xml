@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <t font="4" size="2" x="30" y="20">$123.45</t>
+    <t font="4" size="2" x="30" y="70">$678.90</t>
+    <il x0="25" y0="40" x1="350" y1="40" width="90"></il>
+    <t font="4" size="2" x="30" y="120">$432.10</t>
+    <form/>
+  </print>
+</cpcl>

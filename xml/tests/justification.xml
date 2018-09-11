@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <center end="383"/>
+    <text font="4" y="75">C</text>
+    <left/>
+    <text font="4" y="75">L</text>
+    <right end="383"/>
+    <text font="4" y="75">R</text>
+    <form/>
+  </print>
+</cpcl>
