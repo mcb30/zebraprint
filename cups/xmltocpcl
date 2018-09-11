@@ -1,7 +1,0 @@
-#!/bin/sh
-
-DOC=$6
-if [ -z "${DOC}" ] ; then DOC=- ; fi
-
-exec /usr/bin/xsltproc --nonet --nowrite \
-     ${CUPS_DATADIR}/zebraprint/cpcl.xslt ${DOC}
