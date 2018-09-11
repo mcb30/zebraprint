@@ -25,8 +25,10 @@
 	<xs:element name="b" type="barcode"/>
 	<xs:element name="bar-sense" type="element-only"/>
 	<xs:element name="barcode" type="barcode"/>
+	<xs:element name="barcode-text" type="barcode-text"/>
 	<xs:element name="beep" type="xs:integer"/>
 	<xs:element name="box" type="line"/>
+	<xs:element name="bt" type="barcode-text"/>
 	<xs:element name="center" type="justification"/>
 	<xs:element name="concat" type="concat"/>
 	<xs:element name="contrast" type="xs:integer"/>
@@ -68,6 +70,7 @@
 	<xs:element name="rotate" type="xs:integer"/>
 	<xs:element name="scale-text" type="scale-text"/>
 	<xs:element name="scale-to-fit" type="scale-text"/>
+	<xs:element name="set-tof" type="xs:decimal"/>
 	<xs:element name="setlp" type="setlp"/>
 	<xs:element name="setsp" type="xs:decimal"/>
 	<xs:element name="setmag" type="setmag"/>
@@ -194,6 +197,14 @@
     <xs:attribute name="segments" type="xs:integer"/>
     <xs:attribute name="subtype" type="xs:integer"/>
     <xs:attribute name="extra" type="xs:string"/>
+  </xs:complexType>
+
+  <!-- Barcode text element -->
+  <xs:complexType name="barcode-text">
+    <xs:attribute name="font" type="xs:string"/>
+    <xs:attribute name="size" type="xs:integer"/>
+    <xs:attribute name="fg" type="xs:integer"/>
+    <xs:attribute name="offset" type="xs:decimal"/>
   </xs:complexType>
 
   <!-- Concatenation element -->

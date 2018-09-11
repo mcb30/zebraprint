@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="400">
+    <journal/>
+    <center/>
+    <barcode-text font="7" size="0" offset="5"/>
+    <barcode type="128" width="1" ratio="1" height="50" x="0" y="20">123456789</barcode>
+    <vbarcode type="128" width="1" ratio="1" height="50" x="40" y="400">112233445</vbarcode>
+    <barcode-text/>
+    <form/>
+  </print>
+</cpcl>

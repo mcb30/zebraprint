@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="250">
+    <country>BIG5</country>
+    <setsp>10</setsp>
+    <t font="5" x="10" y="10">Chinese Traditional Sample</t>
+    <setmag width="2" height="2"/>
+    <t font="55" x="10" y="50">ÄØ</t>
+    <t font="55" x="10" y="100">Ä±</t>
+    <setmag width="1" height="1"/>
+  </print>
+</cpcl>

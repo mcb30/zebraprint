@@ -125,6 +125,8 @@
 		       z:postfeed |
 		       z:country |
 		       z:beep |
+		       z:set-tof |
+		       z:baud |
 		       z:cut-at">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
@@ -563,6 +565,29 @@
 	<xsl:call-template name="crlf"/>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <!-- Barcode text commands:
+
+       {command} {font number} {font size} {offset}
+       {command} OFF
+  -->
+  <xsl:template match="z:barcode-text |
+		       z:bt">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@font or @size or @offset">
+	<xsl:call-template name="font-attributes"/>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@offset"><xsl:value-of select="@offset"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+      </xsl:when>
+      <xsl:otherwise>OFF</xsl:otherwise>
+    </xsl:choose>
+    <xsl:call-template name="crlf"/>
   </xsl:template>
 
   <!-- Line drawing commands:

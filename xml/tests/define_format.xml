@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <center/>
+    <text font="4" size="3" y="15">\\</text>
+    <text font="4" size="0" y="95">\\</text>
+    <barcode type="UPCA" width="1" ratio="1" height="40" x="0" y="145">\\</barcode>
+    <text font="7" size="0" y="185">\\</text>
+    <form/>
+  </print>
+</cpcl>

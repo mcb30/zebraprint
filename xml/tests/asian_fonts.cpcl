@@ -3,7 +3,7 @@ COUNTRY BIG5
 SETSP 10
 T 5 0 10 10 Chinese Traditional Sample
 SETMAG 2 2
-T 55 0  10   50 ÄØ
-T 55 0  10   100 Ä±
+T 55 0 10 50 ÄØ
+T 55 0 10 100 Ä±
 SETMAG 1 1
 PRINT
