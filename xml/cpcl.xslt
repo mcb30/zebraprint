@@ -387,21 +387,21 @@
 	  <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
 	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
 	</xsl:choose>
-	<xsl:if test="@xd">
+	<xsl:if test="@width">
 	  <xsl:text> XD </xsl:text>
-	  <xsl:value-of select="@xd"/>
+	  <xsl:value-of select="@width"/>
 	</xsl:if>
-	<xsl:if test="@yd">
+	<xsl:if test="@height">
 	  <xsl:text> YD </xsl:text>
-	  <xsl:value-of select="@yd"/>
+	  <xsl:value-of select="@height"/>
 	</xsl:if>
-	<xsl:if test="@c">
+	<xsl:if test="@columns">
 	  <xsl:text> C </xsl:text>
-	  <xsl:value-of select="@c"/>
+	  <xsl:value-of select="@columns"/>
 	</xsl:if>
-	<xsl:if test="@s">
+	<xsl:if test="@level">
 	  <xsl:text> S </xsl:text>
-	  <xsl:value-of select="@s"/>
+	  <xsl:value-of select="@level"/>
 	</xsl:if>
 	<xsl:call-template name="crlf"/>
 	<xsl:apply-templates/>
@@ -428,6 +428,43 @@
 	<xsl:text>ENDMAXICODE</xsl:text>
 	<xsl:call-template name="crlf"/>
       </xsl:when>
+      <xsl:when test="@type = 'QR'">
+	<xsl:choose>
+	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:if test="@model">
+	  <xsl:text> M </xsl:text>
+	  <xsl:value-of select="@model"/>
+	</xsl:if>
+	<xsl:if test="@width or @height">
+	  <xsl:text> U </xsl:text>
+	  <xsl:choose>
+	    <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
+	    <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
+	  </xsl:choose>
+	</xsl:if>
+	<xsl:call-template name="crlf"/>
+	<xsl:choose>
+	  <xsl:when test="@level"><xsl:value-of select="@level"/></xsl:when>
+	  <xsl:otherwise><xsl:text>M</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:if test="@mask"><xsl:value-of select="@mask"/></xsl:if>
+	<xsl:choose>
+	  <xsl:when test="@manual"><xsl:text>M</xsl:text></xsl:when>
+	  <xsl:otherwise><xsl:text>A</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text>,</xsl:text>
+	<xsl:value-of select="text()"/>
+	<xsl:call-template name="crlf"/>
+	<xsl:text>ENDQR</xsl:text>
+	<xsl:call-template name="crlf"/>
+      </xsl:when>
       <xsl:when test="@type = 'AZTEC'">
 	<xsl:choose>
 	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
@@ -438,13 +475,13 @@
 	  <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
 	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
 	</xsl:choose>
-	<xsl:if test="@xd">
+	<xsl:if test="@width">
 	  <xsl:text> XD </xsl:text>
-	  <xsl:value-of select="@xd"/>
+	  <xsl:value-of select="@width"/>
 	</xsl:if>
-	<xsl:if test="@ec">
+	<xsl:if test="@level">
 	  <xsl:text> EC </xsl:text>
-	  <xsl:value-of select="@ec"/>
+	  <xsl:value-of select="@level"/>
 	</xsl:if>
 	<xsl:call-template name="crlf"/>
 	<xsl:apply-templates/>

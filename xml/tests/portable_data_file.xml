@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
   <print height="210">
-    <b type="PDF-417" x="10" y="20" xd="3" yd="12" c="3" s="2">
+    <b type="PDF-417" x="10" y="20" width="3" height="12" columns="3" level="2">
       <item>PDF Data</item>
       <item>ABCDE12345</item>
     </b>
