@@ -172,10 +172,11 @@
 	  <xs:enumeration value="MSI1110"/>
 	  <xs:enumeration value="POSTNET"/>
 	  <xs:enumeration value="FIM"/>
-	  <xs:enumeration value="AZTEC"/>
+	  <xs:enumeration value="RSS"/>
 	  <xs:enumeration value="PDF-417"/>
 	  <xs:enumeration value="MAXICODE"/>
 	  <xs:enumeration value="QR"/>
+	  <xs:enumeration value="AZTEC"/>
 	</xs:restriction>
       </xs:simpleType>
     </xs:attribute>
@@ -189,6 +190,10 @@
     <xs:attribute name="columns" type="xs:integer"/>
     <xs:attribute name="mask" type="xs:integer"/>
     <xs:attribute name="manual" type="xs:boolean"/>
+    <xs:attribute name="sep" type="xs:decimal"/>
+    <xs:attribute name="segments" type="xs:integer"/>
+    <xs:attribute name="subtype" type="xs:integer"/>
+    <xs:attribute name="extra" type="xs:string"/>
   </xs:complexType>
 
   <!-- Concatenation element -->

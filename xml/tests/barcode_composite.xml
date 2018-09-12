@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="300">
+    <t font="5" x="10" y="40">RSS14 Composite</t>
+    <t font="5" x="10" y="70">1234567890123|1234567890</t>
+    <barcode type="RSS" x="10" y="110" width="2" height="25" sep="3"
+	     segments="22" subtype="1"
+	     extra="1234567890">1234567890123</barcode>
+  </print>
+</cpcl>

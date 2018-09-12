@@ -377,6 +377,51 @@
     </xsl:choose>
     <xsl:text> </xsl:text>
     <xsl:choose>
+      <xsl:when test="@type = 'RSS'">
+	<xsl:choose>
+	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
+	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
+	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@sep"><xsl:value-of select="@sep"/></xsl:when>
+	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@segments">
+	    <xsl:value-of select="@segments"/>
+	  </xsl:when>
+	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@subtype"><xsl:value-of select="@subtype"/></xsl:when>
+	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:value-of select="text()"/>
+	<xsl:if test="@extra">
+	  <xsl:text>|</xsl:text>
+	  <xsl:value-of select="@extra"/>
+	</xsl:if>
+	<xsl:call-template name="crlf"/>
+      </xsl:when>
       <xsl:when test="@type = 'PDF-417'">
 	<xsl:choose>
 	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
