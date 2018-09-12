@@ -408,6 +408,26 @@
 	<xsl:text>ENDPDF</xsl:text>
 	<xsl:call-template name="crlf"/>
       </xsl:when>
+      <xsl:when test="@type = 'MAXICODE'">
+	<xsl:choose>
+	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:call-template name="crlf"/>
+	<xsl:for-each select="*">
+	  <xsl:call-template name="command"/>
+	  <xsl:text> </xsl:text>
+	  <xsl:value-of select="text()"/>
+	  <xsl:call-template name="crlf"/>
+	</xsl:for-each>
+	<xsl:text>ENDMAXICODE</xsl:text>
+	<xsl:call-template name="crlf"/>
+      </xsl:when>
       <xsl:when test="@type = 'AZTEC'">
 	<xsl:choose>
 	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>

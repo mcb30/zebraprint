@@ -107,8 +107,33 @@
   <!-- Barcode element -->
   <xs:complexType name="barcode" mixed="true">
     <xs:sequence>
-      <xs:element name="item" type="xs:string"
-		  minOccurs="0" maxOccurs="unbounded"/>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+	<xs:element name="item" type="xs:string"/>
+	<xs:element name="post" type="xs:string"/>
+	<xs:element name="cc" type="xs:string"/>
+	<xs:element name="sc" type="xs:string"/>
+	<xs:element name="ups5" type="xs:integer"/>
+	<xs:element name="zipper" type="xs:integer"/>
+	<xs:element name="fillc" type="xs:integer"/>
+	<xs:element name="msg" type="xs:string"/>
+	<xs:element name="lpms" type="xs:string"/>
+	<xs:element name="head" type="xs:string"/>
+	<xs:element name="tn" type="xs:string"/>
+	<xs:element name="scac" type="xs:string"/>
+	<xs:element name="shipper" type="xs:string"/>
+	<xs:element name="pickday" type="xs:string"/>
+	<xs:element name="shipid" type="xs:string"/>
+	<xs:element name="nx" type="xs:string"/>
+	<xs:element name="weigh" type="xs:string"/>
+	<xs:element name="val" type="xs:string"/>
+	<xs:element name="staddr" type="xs:string"/>
+	<xs:element name="city" type="xs:string"/>
+	<xs:element name="st" type="xs:string"/>
+	<xs:element name="extra" type="xs:string"/>
+	<xs:element name="eot" type="xs:string"/>
+	<xs:element name="gs" type="xs:string"/>
+	<xs:element name="rs" type="xs:string"/>
+      </xs:choice>
     </xs:sequence>
     <xs:attribute name="type">
       <xs:simpleType>
@@ -145,6 +170,7 @@
 	  <xs:enumeration value="FIM"/>
 	  <xs:enumeration value="AZTEC"/>
 	  <xs:enumeration value="PDF-417"/>
+	  <xs:enumeration value="MAXICODE"/>
 	</xs:restriction>
       </xs:simpleType>
     </xs:attribute>
