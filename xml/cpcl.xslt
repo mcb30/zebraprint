@@ -377,6 +377,37 @@
     </xsl:choose>
     <xsl:text> </xsl:text>
     <xsl:choose>
+      <xsl:when test="@type = 'PDF-417'">
+	<xsl:choose>
+	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:if test="@xd">
+	  <xsl:text> XD </xsl:text>
+	  <xsl:value-of select="@xd"/>
+	</xsl:if>
+	<xsl:if test="@yd">
+	  <xsl:text> YD </xsl:text>
+	  <xsl:value-of select="@yd"/>
+	</xsl:if>
+	<xsl:if test="@c">
+	  <xsl:text> C </xsl:text>
+	  <xsl:value-of select="@c"/>
+	</xsl:if>
+	<xsl:if test="@s">
+	  <xsl:text> S </xsl:text>
+	  <xsl:value-of select="@s"/>
+	</xsl:if>
+	<xsl:call-template name="crlf"/>
+	<xsl:apply-templates/>
+	<xsl:text>ENDPDF</xsl:text>
+	<xsl:call-template name="crlf"/>
+      </xsl:when>
       <xsl:when test="@type = 'AZTEC'">
 	<xsl:choose>
 	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
@@ -387,16 +418,14 @@
 	  <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
 	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
 	</xsl:choose>
-	<xsl:text> XD </xsl:text>
-	<xsl:choose>
-	  <xsl:when test="@xd"><xsl:value-of select="@xd"/></xsl:when>
-	  <xsl:otherwise><xsl:text>6</xsl:text></xsl:otherwise>
-	</xsl:choose>
-	<xsl:text> EC </xsl:text>
-	<xsl:choose>
-	  <xsl:when test="@ec"><xsl:value-of select="@ec"/></xsl:when>
-	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
-	</xsl:choose>
+	<xsl:if test="@xd">
+	  <xsl:text> XD </xsl:text>
+	  <xsl:value-of select="@xd"/>
+	</xsl:if>
+	<xsl:if test="@ec">
+	  <xsl:text> EC </xsl:text>
+	  <xsl:value-of select="@ec"/>
+	</xsl:if>
 	<xsl:call-template name="crlf"/>
 	<xsl:apply-templates/>
 	<xsl:text>ENDAZTEC</xsl:text>

@@ -144,6 +144,7 @@
 	  <xs:enumeration value="POSTNET"/>
 	  <xs:enumeration value="FIM"/>
 	  <xs:enumeration value="AZTEC"/>
+	  <xs:enumeration value="PDF-417"/>
 	</xs:restriction>
       </xs:simpleType>
     </xs:attribute>
@@ -153,7 +154,10 @@
     <xs:attribute name="x" type="xs:decimal"/>
     <xs:attribute name="y" type="xs:decimal"/>
     <xs:attribute name="xd" type="xs:decimal"/>
+    <xs:attribute name="yd" type="xs:decimal"/>
     <xs:attribute name="ec" type="xs:integer"/>
+    <xs:attribute name="c" type="xs:integer"/>
+    <xs:attribute name="s" type="xs:integer"/>
   </xs:complexType>
 
   <!-- Concatenation element -->
