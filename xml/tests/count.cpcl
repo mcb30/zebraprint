@@ -1,5 +1,4 @@
 ! 0 200 200 210 3
-; Print 3 labels
 CENTER
 TEXT 4 0 0 50 TESTING 001
 COUNT 1
