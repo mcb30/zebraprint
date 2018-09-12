@@ -34,6 +34,7 @@
 	<xs:element name="cut" type="element-only"/>
 	<xs:element name="cut-at" type="xs:integer"/>
 	<xs:element name="encoding" type="encoding"/>
+	<xs:element name="fg" type="fg"/>
 	<xs:element name="form" type="element-only"/>
 	<xs:element name="gap-sense" type="element-only"/>
 	<xs:element name="il" type="line"/>
@@ -229,6 +230,19 @@
       <xs:enumeration value="GB18030"/>
     </xs:restriction>
   </xs:simpleType>
+
+  <!-- Font group element -->
+  <xs:complexType name="fg">
+    <xs:sequence>
+      <xs:element name="f" maxOccurs="unbounded">
+	<xs:complexType>
+	  <xs:attribute name="font" type="xs:integer"/>
+	  <xs:attribute name="size" type="xs:integer"/>
+	</xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="fg" type="xs:integer"/>
+  </xs:complexType>
 
   <!-- Justification element -->
   <xs:complexType name="justification">
