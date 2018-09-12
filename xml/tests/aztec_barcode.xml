@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="600">
+    <t font="7" x="50">Aztec Code - Label Spec 5-1 EC=47</t>
+    <b type="AZTEC" x="50" y="100" xd="7" ec="47">
+      <item>123456789012</item>
+    </b>
+  </print>
+</cpcl>

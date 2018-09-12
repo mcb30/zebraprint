@@ -78,7 +78,7 @@
     </xsl:message>
   </xsl:template>
 
-  <!-- Raw data (including multiline items) -->
+  <!-- Raw data (including multiline and other miscellaneous items) -->
   <xsl:template match="z:raw |
 		       z:item">
     <xsl:value-of select="text()"/>
@@ -377,32 +377,61 @@
     </xsl:choose>
     <xsl:text> </xsl:text>
     <xsl:choose>
-      <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
-      <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+      <xsl:when test="@type = 'AZTEC'">
+	<xsl:choose>
+	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> XD </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@xd"><xsl:value-of select="@xd"/></xsl:when>
+	  <xsl:otherwise><xsl:text>6</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> EC </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@ec"><xsl:value-of select="@ec"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:call-template name="crlf"/>
+	<xsl:apply-templates/>
+	<xsl:text>ENDAZTEC</xsl:text>
+	<xsl:call-template name="crlf"/>
+      </xsl:when>
+      <xsl:otherwise>
+	<xsl:choose>
+	  <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
+	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@ratio"><xsl:value-of select="@ratio"/></xsl:when>
+	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
+	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:choose>
+	  <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+	</xsl:choose>
+	<xsl:text> </xsl:text>
+	<xsl:value-of select="text()"/>
+	<xsl:call-template name="crlf"/>
+      </xsl:otherwise>
     </xsl:choose>
-    <xsl:text> </xsl:text>
-    <xsl:choose>
-      <xsl:when test="@ratio"><xsl:value-of select="@ratio"/></xsl:when>
-      <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
-    </xsl:choose>
-    <xsl:text> </xsl:text>
-    <xsl:choose>
-      <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
-      <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
-    </xsl:choose>
-    <xsl:text> </xsl:text>
-    <xsl:choose>
-      <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
-      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
-    </xsl:choose>
-    <xsl:text> </xsl:text>
-    <xsl:choose>
-      <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
-      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
-    </xsl:choose>
-    <xsl:text> </xsl:text>
-    <xsl:value-of select="text()"/>
-    <xsl:call-template name="crlf"/>
   </xsl:template>
 
   <!-- Line drawing commands:

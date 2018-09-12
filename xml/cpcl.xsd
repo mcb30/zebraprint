@@ -22,6 +22,7 @@
     <xs:sequence>
       <xs:choice maxOccurs="unbounded">
 	<xs:element name="auto-pace" type="element-only"/>
+	<xs:element name="b" type="barcode"/>
 	<xs:element name="bar-sense" type="element-only"/>
 	<xs:element name="barcode" type="barcode"/>
 	<xs:element name="beep" type="xs:integer"/>
@@ -78,6 +79,7 @@
 	<xs:element name="text270" type="text"/>
 	<xs:element name="text90" type="text"/>
 	<xs:element name="tone" type="xs:integer"/>
+	<xs:element name="vb" type="barcode"/>
 	<xs:element name="vbarcode" type="barcode"/>
 	<xs:element name="vscale-text" type="scale-text"/>
 	<xs:element name="vscale-to-fit" type="scale-text"/>
@@ -103,52 +105,55 @@
   </xs:complexType>
 
   <!-- Barcode element -->
-  <xs:complexType name="barcode">
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-	<xs:attribute name="type">
-	  <xs:simpleType>
-	    <xs:restriction base="xs:string">
-	      <xs:enumeration value="UPCA"/>
-	      <xs:enumeration value="UPCA2"/>
-	      <xs:enumeration value="UPCA5"/>
-	      <xs:enumeration value="UPCE"/>
-	      <xs:enumeration value="UPCE2"/>
-	      <xs:enumeration value="UPCE5"/>
-	      <xs:enumeration value="EAN13"/>
-	      <xs:enumeration value="EAN132"/>
-	      <xs:enumeration value="EAN135"/>
-	      <xs:enumeration value="EAN8"/>
-	      <xs:enumeration value="EAN82"/>
-	      <xs:enumeration value="EAN85"/>
-	      <xs:enumeration value="39"/>
-	      <xs:enumeration value="39C"/>
-	      <xs:enumeration value="F39"/>
-	      <xs:enumeration value="F39C"/>
-	      <xs:enumeration value="93"/>
-	      <xs:enumeration value="I2OF5"/>
-	      <xs:enumeration value="I2OF5C"/>
-	      <xs:enumeration value="I2OF5G"/>
-	      <xs:enumeration value="128"/>
-	      <xs:enumeration value="UCCEAN128"/>
-	      <xs:enumeration value="CODABAR"/>
-	      <xs:enumeration value="CODABAR16"/>
-	      <xs:enumeration value="MSI"/>
-	      <xs:enumeration value="MSI10"/>
-	      <xs:enumeration value="MSI1010"/>
-	      <xs:enumeration value="MSI1110"/>
-	      <xs:enumeration value="POSTNET"/>
-	      <xs:enumeration value="FIM"/>
-	    </xs:restriction>
-	  </xs:simpleType>
-	</xs:attribute>
-	<xs:attribute name="width" type="xs:integer"/>
-	<xs:attribute name="ratio" type="xs:integer"/>
-	<xs:attribute name="height" type="xs:integer"/>
-	<xs:attribute name="x" type="xs:decimal"/>
-	<xs:attribute name="y" type="xs:decimal"/>
-      </xs:extension>
-    </xs:simpleContent>
+  <xs:complexType name="barcode" mixed="true">
+    <xs:sequence>
+      <xs:element name="item" type="xs:string"
+		  minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="type">
+      <xs:simpleType>
+	<xs:restriction base="xs:string">
+	  <xs:enumeration value="UPCA"/>
+	  <xs:enumeration value="UPCA2"/>
+	  <xs:enumeration value="UPCA5"/>
+	  <xs:enumeration value="UPCE"/>
+	  <xs:enumeration value="UPCE2"/>
+	  <xs:enumeration value="UPCE5"/>
+	  <xs:enumeration value="EAN13"/>
+	  <xs:enumeration value="EAN132"/>
+	  <xs:enumeration value="EAN135"/>
+	  <xs:enumeration value="EAN8"/>
+	  <xs:enumeration value="EAN82"/>
+	  <xs:enumeration value="EAN85"/>
+	  <xs:enumeration value="39"/>
+	  <xs:enumeration value="39C"/>
+	  <xs:enumeration value="F39"/>
+	  <xs:enumeration value="F39C"/>
+	  <xs:enumeration value="93"/>
+	  <xs:enumeration value="I2OF5"/>
+	  <xs:enumeration value="I2OF5C"/>
+	  <xs:enumeration value="I2OF5G"/>
+	  <xs:enumeration value="128"/>
+	  <xs:enumeration value="UCCEAN128"/>
+	  <xs:enumeration value="CODABAR"/>
+	  <xs:enumeration value="CODABAR16"/>
+	  <xs:enumeration value="MSI"/>
+	  <xs:enumeration value="MSI10"/>
+	  <xs:enumeration value="MSI1010"/>
+	  <xs:enumeration value="MSI1110"/>
+	  <xs:enumeration value="POSTNET"/>
+	  <xs:enumeration value="FIM"/>
+	  <xs:enumeration value="AZTEC"/>
+	</xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="width" type="xs:integer"/>
+    <xs:attribute name="ratio" type="xs:integer"/>
+    <xs:attribute name="height" type="xs:integer"/>
+    <xs:attribute name="x" type="xs:decimal"/>
+    <xs:attribute name="y" type="xs:decimal"/>
+    <xs:attribute name="xd" type="xs:decimal"/>
+    <xs:attribute name="ec" type="xs:integer"/>
   </xs:complexType>
 
   <!-- Concatenation element -->
