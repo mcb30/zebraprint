@@ -129,7 +129,8 @@
 		       z:baud |
 		       z:cut-at |
 		       z:announce |
-		       z:timeout">
+		       z:timeout |
+		       z:lt">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
     <xsl:value-of select="text()"/>

@@ -58,6 +58,7 @@
 	<xs:element name="label" type="element-only"/>
 	<xs:element name="left" type="justification"/>
 	<xs:element name="line" type="line"/>
+	<xs:element name="lt" type="xs:string"/>
 	<xs:element name="ml" type="multiline"/>
 	<xs:element name="multiline" type="multiline"/>
 	<xs:element name="no-pace" type="element-only"/>
