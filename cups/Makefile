@@ -4,6 +4,7 @@ CFLAGS		+= $(shell pkg-config $(LIBS) --cflags)
 LDFLAGS		+= $(shell pkg-config $(LIBS) --libs)
 
 CFLAGS		+= -O3
+CFLAGS		+= -g
 CFLAGS		+= -W -Wall -Wextra -Werror
 
 all : xmltocpcl
