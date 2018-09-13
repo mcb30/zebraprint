@@ -68,6 +68,7 @@
 	<xs:element name="page-width" type="xs:decimal"/>
 	<xs:element name="partial-cut" type="element-only"/>
 	<xs:element name="pattern" type="pattern"/>
+	<xs:element name="pcx" type="pcx"/>
 	<xs:element name="postfeed" type="xs:decimal"/>
 	<xs:element name="pre-tension" type="xs:decimal"/>
 	<xs:element name="prefeed" type="xs:decimal"/>
@@ -338,6 +339,17 @@
       <xs:maxInclusive value="106"/>
     </xs:restriction>
   </xs:simpleType>
+
+  <!-- PCX element -->
+  <xs:complexType name="pcx">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+	<xs:attribute name="x" type="xs:decimal"/>
+	<xs:attribute name="y" type="xs:decimal"/>
+	<xs:attribute name="file" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
   <!-- Present-at element -->
   <xs:complexType name="present-at">

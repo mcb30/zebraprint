@@ -760,4 +760,34 @@
     <xsl:call-template name="crlf"/>
   </xsl:template>
 
+  <!-- PCX command:
+
+       {command} {x} {y}
+       {data}
+  -->
+  <xsl:template match="z:pcx">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:choose>
+      <xsl:when test="@file">
+	<xsl:text> !&lt;</xsl:text><xsl:value-of select="@file"/>
+	<xsl:call-template name="crlf"/>
+      </xsl:when>
+      <xsl:otherwise>
+	<xsl:call-template name="crlf"/>
+	<xsl:value-of select="text()"/>
+	<xsl:call-template name="crlf"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
 </xsl:stylesheet>
