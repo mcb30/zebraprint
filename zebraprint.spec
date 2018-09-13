@@ -10,6 +10,7 @@ License:	GPLv2+
 URL:		http://github.com/unipartdigital/%{srcname}
 VCS:		{{{ git_dir_vcs }}}
 Source:		{{{ git_dir_pack }}}
+BuildRequires:	gcc
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-devel
 BuildRequires:	cups-devel
