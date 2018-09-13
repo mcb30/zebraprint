@@ -5,7 +5,8 @@ XSLTPROC	?= xsltproc
 XSD		:= ../cpcl.xsd
 XSLT		:= ../cpcl.xslt
 
-XMLS		:= $(wildcard *.xml)
+CPCLS		:= $(wildcard *.cpcl)
+XMLS		:= $(patsubst %.cpcl,%.xml,$(CPCLS)) $(wildcard *.xml)
 TESTS		:= $(patsubst %.xml,%.test,$(XMLS))
 
 ifeq ($(V),1)
