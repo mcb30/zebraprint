@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <utilities>
+    <in-millimeters/>
+    <setlp font="4" size="0" height="5"/>
+    <country>USA</country>
+  </utilities>
+  <raw>This is text with</raw>
+  <raw>Country set to </raw>
+  <raw>USA</raw>
+  <raw>#$@[\]^‘{|}~</raw>
+  <utilities>
+    <country>ITALY</country>
+  </utilities>
+  <raw>This is text with</raw>
+  <raw>Country set to </raw>
+  <raw>ITALY</raw>
+  <raw>#$@[\]^‘{|}~</raw>
+</cpcl>

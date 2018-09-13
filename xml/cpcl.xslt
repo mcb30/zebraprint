@@ -127,7 +127,9 @@
 		       z:beep |
 		       z:set-tof |
 		       z:baud |
-		       z:cut-at">
+		       z:cut-at |
+		       z:announce |
+		       z:timeout">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
     <xsl:value-of select="text()"/>
@@ -679,6 +681,79 @@
     <xsl:text> </xsl:text>
     <xsl:choose>
       <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+
+  <!-- Expanded graphics commands:
+
+       {command} {width} {height} {x} {y} {data}
+  -->
+  <xsl:template match="z:expanded-graphics |
+		       z:eg |
+		       z:vexpanded-graphics |
+		       z:veg |
+		       z:compressed-graphics |
+		       z:cg |
+		       z:vcompressed-graphics |
+		       z:vcg">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
+      <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@y"><xsl:value-of select="@y"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="text()"/>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+
+  <!-- On-out-of-paper command:
+
+       {command} {action} {number of retries}
+  -->
+  <xsl:template match="z:on-out-of-paper">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@action"><xsl:value-of select="@action"/></xsl:when>
+      <xsl:otherwise><xsl:text>PURGE</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@retries"><xsl:value-of select="@retries"/></xsl:when>
+      <xsl:otherwise><xsl:text>2</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:call-template name="crlf"/>
+  </xsl:template>
+
+  <!-- Set form feed command -->
+  <xsl:template match="z:setff">
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@max"><xsl:value-of select="@max"/></xsl:when>
+      <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
+    </xsl:choose>
+    <xsl:text> </xsl:text>
+    <xsl:choose>
+      <xsl:when test="@skip"><xsl:value-of select="@skip"/></xsl:when>
       <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:call-template name="crlf"/>

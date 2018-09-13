@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="150">
+    <on-out-of-paper action="WAIT" retries="2"/>
+    <text font="5" y="20">MAKE TWO ATTEMPT</text>
+    <form/>
+  </print>
+</cpcl>
