@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <u>
+    <setlp font="4" height="40"/>
+    <setlf>40</setlf>
+  </u>
+  <raw>Output 2</raw>
+  <raw>Text line</raw>
+  <raw>Text line</raw>
+  <raw>Text line</raw>
+</cpcl>

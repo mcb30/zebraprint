@@ -71,6 +71,12 @@
     <xsl:call-template name="crlf"/>
   </xsl:template>
 
+  <!-- Utility element -->
+  <xsl:template match="z:u1">
+    <xsl:text>! U1 </xsl:text>
+    <xsl:apply-templates/>
+  </xsl:template>
+
   <!-- Fail on unknown elements -->
   <xsl:template match="*">
     <xsl:message terminate="yes">Unrecognised element:
@@ -81,7 +87,7 @@
   <!-- Raw data (including multiline and other miscellaneous items) -->
   <xsl:template match="z:raw |
 		       z:item">
-    <xsl:value-of select="text()"/>
+    <xsl:apply-templates/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
 
@@ -130,7 +136,10 @@
 		       z:cut-at |
 		       z:announce |
 		       z:timeout |
-		       z:lt">
+		       z:lt |
+		       z:setbold |
+		       z:setlf |
+		       z:underline">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
     <xsl:value-of select="text()"/>
@@ -788,6 +797,17 @@
 	<xsl:call-template name="crlf"/>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <!-- Use format command -->
+  <xsl:template match="z:use-format |
+		       z:uf">
+    <xsl:text>! </xsl:text>
+    <xsl:call-template name="command"/>
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="@file"/>
+    <xsl:call-template name="crlf"/>
+    <xsl:apply-templates/>
   </xsl:template>
 
 </xsl:stylesheet>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <u1><journal/></u1>
+  <u1><setlp font="5" size="2" height="46"/></u1>
+  <raw>AURORA’S</raw>
+  <raw> FABRIC SHOP</raw>
+  <u1><setlp font="5" height="24"/></u1>
+  <raw>         123 Castle Drive, Kingston, RI  02881</raw>
+  <raw>               (401) 555-4CUT</raw>
+  <u1><setlp font="7" height="24"/></u1>
+  <raw>  4:20 PM Thursday, June 04, 2020  Store: 142</raw>
+  <raw>  Order Number:  #59285691</raw>
+  <raw>  Status:  <u1><setsp>10</setsp></u1>INCOMPLETE <u1><setsp>0</setsp></u1>Item  Description  Quant.   Price  Subtotal  Tax</raw>
+  <raw>1211  45” Buckram  5 yds @  $3.42/yd $17.10   Y</raw>
+  <raw>Z121  60” Blue Silk 10 yds@ $15.00/yd $150.00 N</raw>
+  <raw>Z829  60” Muslin    20 yds@ $1.00/yd $20.00   Y</raw>
+  <raw>            SUBTOTAL:  $187.10</raw>
+  <raw>   RHODE ISLAND SALES TAX 7.00%:      $2.60</raw>
+  <raw>TOTAL:     $189.70</raw>
+  <u1><setlp font="7" size="1" height="48"/></u1>
+  <raw>   PLEASE BRING THIS RECEIPT TO THE CASHIER</raw>
+  <raw>       WITH THE REST OF YOUR PURCHASES.</raw>
+  <u1><center/></u1>
+  <u1><b type="128" width="1" ratio="2" height="100">59285691 ST 187.10 T 2.60</b></u1>
+</cpcl>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <uf file="SHELF.FMT">
+    <item>$22.99</item>
+    <item>SWEATSHIRT</item>
+    <item>40123456784</item>
+    <item>40123456784</item>
+  </uf>
+</cpcl>

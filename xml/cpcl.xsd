@@ -13,7 +13,11 @@
       <xs:choice maxOccurs="unbounded">
 	<xs:element name="print" type="print"/>
 	<xs:element name="utilities" type="print"/>
-	<xs:element name="raw" type="xs:string"/>
+	<xs:element name="u" type="print"/>
+	<xs:element name="u1" type="print"/>
+	<xs:element name="use-format" type="use-format"/>
+	<xs:element name="uf" type="use-format"/>
+	<xs:element name="raw" type="raw"/>
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
@@ -81,7 +85,9 @@
 	<xs:element name="scale-text" type="scale-text"/>
 	<xs:element name="scale-to-fit" type="scale-text"/>
 	<xs:element name="set-tof" type="xs:decimal"/>
+	<xs:element name="setbold" type="xs:integer"/>
 	<xs:element name="setff" type="setff"/>
+	<xs:element name="setlf" type="xs:decimal"/>
 	<xs:element name="setlp" type="setlp"/>
 	<xs:element name="setsp" type="xs:decimal"/>
 	<xs:element name="setmag" type="setmag"/>
@@ -98,6 +104,7 @@
 	<xs:element name="text270" type="text"/>
 	<xs:element name="text90" type="text"/>
 	<xs:element name="tone" type="xs:integer"/>
+	<xs:element name="underline" type="xs:string"/>
 	<xs:element name="vb" type="barcode"/>
 	<xs:element name="vbarcode" type="barcode"/>
 	<xs:element name="vcg" type="expanded-graphics"/>
@@ -357,6 +364,14 @@
     <xs:attribute name="delay" type="xs:integer"/>
   </xs:complexType>
 
+  <!-- Raw data -->
+  <xs:complexType name="raw" mixed="true">
+    <xs:sequence>
+      <xs:element name="u1" type="print"
+		  minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
   <!-- Scalable text element -->
   <xs:complexType name="scale-text">
     <xs:simpleContent>
@@ -403,6 +418,15 @@
 	<xs:attribute name="y" type="xs:decimal"/>
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- Use format element -->
+  <xs:complexType name="use-format">
+    <xs:sequence>
+      <xs:element name="item" type="xs:string"
+		  minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="file" type="xs:string"/>
   </xs:complexType>
 
 </xs:schema>

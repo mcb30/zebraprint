@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <u1><journal/></u1>
+  <u1><setlp font="4" height="47"/></u1>
+  <raw>  YOURCO RETAIL STORES</raw>
+  <u1><setlp font="7" height="24"/></u1>
+  <raw>  14:40 PM      Thursday, 06/04/20</raw>
+  <raw>  Quantity  Item         Unit    Total</raw>
+  <raw>  1         Babelfish    $4.20   $4.20</raw>
+  <raw>            Tax:            5%   $0.21</raw>
+  <u1><setsp>5</setsp></u1>
+  <raw>      Total:<u1><setsp>0</setsp></u1>                $4.41</raw>
+  <raw>Thank you for shopping at YOURCO</raw>
+</cpcl>

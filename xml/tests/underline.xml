@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="200">
+    <encoding>GB18030</encoding>
+    <underline>ON</underline>
+    <text font="GBUNSG24.CPF" x="20" y="30">Underlined ‚t‚u</text>
+    <underline>OFF</underline>
+    <text font="GBUNSG24.CPF" x="20" y="80">Normal ‚t‚u</text>
+    <encoding>ASCII</encoding>
+    <underline>OFF</underline>
+  </print>
+</cpcl>

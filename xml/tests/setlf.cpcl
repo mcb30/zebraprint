@@ -1,4 +1,5 @@
-! U SETLP 4 0 40
+! U
+SETLP 4 0 40
 SETLF 40
 PRINT
 Output 2

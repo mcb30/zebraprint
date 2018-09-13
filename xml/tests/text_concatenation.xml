@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <print height="210">
+    <concat x="75" y="75">
+      <text font="4" size="2" offset="5">$</text>
+      <text font="4" size="3">12</text>
+      <text font="4" size="2" offset="5">34</text>
+    </concat>
+    <form/>
+  </print>
+</cpcl>

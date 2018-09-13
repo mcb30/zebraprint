@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
+  <u1><setbold>2</setbold></u1>
+  <raw>This text is in bold <u1><setbold>0</setbold></u1>but this text is normal.</raw>
+</cpcl>
