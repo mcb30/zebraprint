@@ -4,7 +4,7 @@
 
 Name:		{{{ git_dir_name }}}
 Version:	{{{ git_dir_version }}}
-Release:	2%{?dist}
+Release:	1%{?dist}
 Summary:	Zebra CPCL label printer support
 License:	GPLv2+
 URL:		http://github.com/unipartdigital/%{srcname}
