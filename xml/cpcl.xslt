@@ -119,6 +119,7 @@
 		       z:contrast |
 		       z:tone |
 		       z:page-width |
+           z:page-height |
 		       z:pw |
 		       z:wait |
 		       z:pre-tension |
@@ -138,8 +139,7 @@
 		       z:timeout |
 		       z:lt |
 		       z:setbold |
-		       z:setlf |
-		       z:underline">
+		       z:setlf">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
     <xsl:value-of select="text()"/>
@@ -404,12 +404,12 @@
 	<xsl:text> </xsl:text>
 	<xsl:choose>
 	  <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
-	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+	  <xsl:otherwise><xsl:text>2</xsl:text></xsl:otherwise>
 	</xsl:choose>
 	<xsl:text> </xsl:text>
 	<xsl:choose>
 	  <xsl:when test="@height"><xsl:value-of select="@height"/></xsl:when>
-	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
+	  <xsl:otherwise><xsl:text>6</xsl:text></xsl:otherwise>
 	</xsl:choose>
 	<xsl:text> </xsl:text>
 	<xsl:choose>
@@ -456,8 +456,9 @@
 	</xsl:if>
 	<xsl:if test="@columns">
 	  <xsl:text> C </xsl:text>
-	  <xsl:value-of select="@columns"/>
-	</xsl:if>
+    <xsl:when test="@columns"><xsl:value-of select="@columns"></xsl:when>
+    <xsl:otherwise><xsl:text>3</xsl:text>
+  </xsl:if>
 	<xsl:if test="@level">
 	  <xsl:text> S </xsl:text>
 	  <xsl:value-of select="@level"/>

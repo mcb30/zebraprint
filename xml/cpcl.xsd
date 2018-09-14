@@ -32,7 +32,7 @@
 	<xs:element name="bar-sense" type="element-only"/>
 	<xs:element name="barcode" type="barcode"/>
 	<xs:element name="barcode-text" type="barcode-text"/>
-	<xs:element name="baud" type="xs:integer"/>
+	<xs:element name="baud" type="baud"/>
 	<xs:element name="beep" type="xs:integer"/>
 	<xs:element name="box" type="line"/>
 	<xs:element name="bt" type="barcode-text"/>
@@ -40,9 +40,9 @@
 	<xs:element name="center" type="justification"/>
 	<xs:element name="compressed-graphics" type="expanded-graphics"/>
 	<xs:element name="concat" type="concat"/>
-	<xs:element name="contrast" type="xs:integer"/>
-	<xs:element name="count" type="xs:integer"/>
-	<xs:element name="country" type="xs:string"/>
+	<xs:element name="contrast" type="contrast"/>
+	<xs:element name="count" type="count"/>
+	<xs:element name="country" type="country"/>
 	<xs:element name="cut" type="element-only"/>
 	<xs:element name="cut-at" type="xs:decimal"/>
 	<xs:element name="eg" type="expanded-graphics"/>
@@ -62,17 +62,20 @@
 	<xs:element name="label" type="element-only"/>
 	<xs:element name="left" type="justification"/>
 	<xs:element name="line" type="line"/>
-	<xs:element name="lt" type="xs:string"/>
+	<xs:element name="lt" type="lt"/>
 	<xs:element name="ml" type="multiline"/>
 	<xs:element name="multiline" type="multiline"/>
 	<xs:element name="no-pace" type="element-only"/>
-	<xs:element name="on-feed" type="xs:string"/>
+	<xs:element name="on-feed" type="on-feed"/>
 	<xs:element name="on-out-of-paper" type="on-out-of-paper"/>
 	<xs:element name="pace" type="element-only"/>
+    <xs:element name="page-height" type="xs:decimal"/>
 	<xs:element name="page-width" type="xs:decimal"/>
 	<xs:element name="partial-cut" type="element-only"/>
 	<xs:element name="pattern" type="pattern"/>
 	<xs:element name="pcx" type="pcx"/>
+    <xs:element name="ph" type="xs:decimal"/>
+    <xs:element name="post-tension" type="xs:decimal"/>
 	<xs:element name="postfeed" type="xs:decimal"/>
 	<xs:element name="pre-tension" type="xs:decimal"/>
 	<xs:element name="prefeed" type="xs:decimal"/>
@@ -85,13 +88,13 @@
 	<xs:element name="scale-text" type="scale-text"/>
 	<xs:element name="scale-to-fit" type="scale-text"/>
 	<xs:element name="set-tof" type="xs:decimal"/>
-	<xs:element name="setbold" type="xs:integer"/>
+	<xs:element name="setbold" type="setbold"/>
 	<xs:element name="setff" type="setff"/>
 	<xs:element name="setlf" type="xs:decimal"/>
 	<xs:element name="setlp" type="setlp"/>
 	<xs:element name="setsp" type="xs:decimal"/>
 	<xs:element name="setmag" type="setmag"/>
-	<xs:element name="speed" type="xs:integer"/>
+	<xs:element name="speed" type="setbold"/>
 	<xs:element name="st" type="scale-text"/>
 	<xs:element name="stf" type="scale-text"/>
 	<xs:element name="t" type="text"/>
@@ -103,8 +106,8 @@
 	<xs:element name="text180" type="text"/>
 	<xs:element name="text270" type="text"/>
 	<xs:element name="text90" type="text"/>
-	<xs:element name="tone" type="xs:integer"/>
-	<xs:element name="underline" type="xs:string"/>
+	<xs:element name="tone" type="tone"/>
+	<xs:element name="underline" type="boolean"/>
 	<xs:element name="vb" type="barcode"/>
 	<xs:element name="vbarcode" type="barcode"/>
 	<xs:element name="vcg" type="expanded-graphics"/>
@@ -131,7 +134,7 @@
     <xs:attribute name="xdpi" type="xs:integer"/>
     <xs:attribute name="ydpi" type="xs:integer"/>
     <xs:attribute name="height" type="xs:decimal"/>
-    <xs:attribute name="qty" type="xs:integer"/>
+    <xs:attribute name="qty" type="qty"/>
   </xs:complexType>
 
   <!-- Barcode element -->
@@ -142,9 +145,9 @@
 	<xs:element name="post" type="xs:string"/>
 	<xs:element name="cc" type="xs:string"/>
 	<xs:element name="sc" type="xs:string"/>
-	<xs:element name="ups5" type="xs:integer"/>
-	<xs:element name="zipper" type="xs:integer"/>
-	<xs:element name="fillc" type="xs:integer"/>
+	<xs:element name="ups5" type="xs:boolean"/>
+	<xs:element name="zipper" type="xs:boolean"/>
+	<xs:element name="fillc" type="fillc"/>
 	<xs:element name="msg" type="xs:string"/>
 	<xs:element name="lpms" type="xs:string"/>
 	<xs:element name="head" type="xs:string"/>
@@ -208,17 +211,18 @@
     </xs:attribute>
     <xs:attribute name="x" type="xs:decimal"/>
     <xs:attribute name="y" type="xs:decimal"/>
-    <xs:attribute name="width" type="xs:decimal"/>
-    <xs:attribute name="height" type="xs:decimal"/>
-    <xs:attribute name="ratio" type="xs:integer"/>
+    <xs:attribute name="width" type="barcode-width"/>
+    <xs:attribute name="height" type="xs:barcode-height"/>
+    <xs:attribute name="ratio" type="ratio"/>
     <xs:attribute name="model" type="xs:integer"/>
-    <xs:attribute name="level" type="xs:string"/>
-    <xs:attribute name="columns" type="xs:integer"/>
-    <xs:attribute name="mask" type="xs:integer"/>
+    <xs:attribute name="level" type="xs:level"/>
+    <xs:attribute name="columns" type="columns"/>
+    <xs:attribute name="mask" type="mask"/>
     <xs:attribute name="manual" type="xs:boolean"/>
     <xs:attribute name="sep" type="xs:decimal"/>
+    <!-- can't find? -->
     <xs:attribute name="segments" type="xs:integer"/>
-    <xs:attribute name="subtype" type="xs:integer"/>
+    <xs:attribute name="subtype" type="subtype"/>
     <xs:attribute name="extra" type="xs:string"/>
   </xs:complexType>
 
@@ -333,17 +337,196 @@
     <xs:attribute name="y" type="xs:decimal"/>
   </xs:complexType>
 
+  <!-- Count element -->
+  <xs:simpleType name="count">
+    <xs:restriction base="xs:integer">
+    <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Msg element -->
+  <xs:simpleType name="msg">
+    <xs:restriction base="xs:integer">
+    <xs:maxLength value="84"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Fillc element -->
+  <xs:simpleType name="fillc">
+    <xs:restriction base="xs:integer">
+      <xs:length value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <!-- On-out-of-paper element -->
   <xs:complexType name="on-out-of-paper">
-    <xs:attribute name="action" type="xs:string"/>
+    <xs:attribute name="action" type="purge"/>
     <xs:attribute name="retries" type="xs:integer"/>
   </xs:complexType>
+
+  <!-- Subtype element -->
+  <xs:simpleType name="subtype">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="12"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Model element -->
+  <xs:simpleType name="model">
+    <xs:restriction base="xs:integer">
+      <xs:pattern value="1|2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Baud element -->
+  <xs:simpleType name="baud">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1200"/>
+      <xs:enumeration value="4800"/>
+      <xs:enumeration value="9600"/>
+      <xs:enumeration value="19200"/>
+      <xs:enumeration value="38400"/>
+      <xs:enumeration value="57600"/>
+      <xs:enumeration value="115200"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- On-feed element -->
+  <xs:simpleType name="on-feed">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IGNORE"/>
+      <xs:enumeration value="FEED"/>
+      <xs:enumeration value="REPRINT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- LT element -->
+  <xs:simpleType name="lt">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CR"/>
+      <xs:enumeration value="LF"/>
+      <xs:enumeration value="CR-LF"/>
+      <xs:enumeration value="CR-X-LF"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Country element -->
+  <xs:simpleType name="country">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="USA"/>
+      <xs:enumeration value="GERMANY"/>
+      <xs:enumeration value="FRANCE"/>
+      <xs:enumeration value="NORWAY"/>
+      <xs:enumeration value="SPAIN"/>
+      <xs:enumeration value="SWEDEN"/>
+      <xs:enumeration value="ITALY"/>
+      <xs:enumeration value="CP850"/>
+      <xs:enumeration value="UK"/>
+      <xs:enumeration value="LATIN9"/>
+      <xs:enumeration value="CP874"/>
+      <xs:enumeration value="CHINA"/>
+      <xs:enumeration value="JAPAN-S"/>
+      <xs:enumeration value="BIG5"/>
+      <xs:enumeration value="KOREA"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Level element -->
+  <xs:simpleType name="level">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="H"/>
+      <xs:enumeration value="Q"/>
+      <xs:enumeration value="M"/>
+      <xs:enumeration value="L"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Contrast element -->
+  <xs:simpleType name="contrast">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Tone element -->
+  <xs:simpleType name="tone">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="-99"/>
+      <xs:maxInclusive value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Setbold element -->
+  <xs:simpleType name="setbold">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Mask element -->
+  <xs:simpleType name="mask">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="8"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Columns element -->
+  <xs:simpleType name="columns">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Ratio element -->
+  <xs:simpleType name="ratio">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Purge element -->
+  <xs:simpleType name="purge">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PURGE"/>
+      <xs:enumeration value="WAIT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Quantity element -->
+  <xs:simpleType name="qty">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="1024"/>
+    </xs:restriction>
+  </xs:simpleType>
 
   <!-- Pattern element -->
   <xs:simpleType name="pattern">
     <xs:restriction base="xs:integer">
       <xs:minInclusive value="100"/>
       <xs:maxInclusive value="106"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Barcode-width element -->
+  <xs:simpleType name="barcode-width">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Barcode-height element -->
+  <xs:simpleType name="barcode-height">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="32"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -390,7 +573,9 @@
   <!-- Set form feed element -->
   <xs:complexType name="setff">
     <xs:attribute name="max" type="xs:decimal"/>
+    <!-- limited to 0-20,000 -->
     <xs:attribute name="skip" type="xs:decimal"/>
+    <!-- limited to 5-50 -->
   </xs:complexType>
 
   <!-- Set line printing font element -->
@@ -427,6 +612,7 @@
 		  minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attribute name="file" type="xs:string"/>
+    <!-- file names <= 8 chars, extension <=3 -->
   </xs:complexType>
 
 </xs:schema>
