@@ -404,7 +404,7 @@
 	<xsl:text> </xsl:text>
 	<xsl:choose>
 	  <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
-	  <xsl:otherwise><xsl:text>2</xsl:text></xsl:otherwise>
+	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
 	</xsl:choose>
 	<xsl:text> </xsl:text>
 	<xsl:choose>
@@ -436,6 +436,7 @@
 	</xsl:if>
 	<xsl:call-template name="crlf"/>
       </xsl:when>
+    </xsl:choose>
       <xsl:when test="@type = 'PDF-417'">
 	<xsl:choose>
 	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
@@ -454,11 +455,11 @@
 	  <xsl:text> YD </xsl:text>
 	  <xsl:value-of select="@height"/>
 	</xsl:if>
-	<xsl:if test="@columns">
+	<xsl:choose test="@columns">
 	  <xsl:text> C </xsl:text>
-    <xsl:when test="@columns"><xsl:value-of select="@columns"></xsl:when>
-    <xsl:otherwise><xsl:text>3</xsl:text>
-  </xsl:if>
+    <xsl:when test="@columns"><xsl:value-of select="@columns"/></xsl:when>
+    <xsl:otherwise><xsl:text>3</xsl:text></xsl:otherwise>
+  </xsl:choose>
 	<xsl:if test="@level">
 	  <xsl:text> S </xsl:text>
 	  <xsl:value-of select="@level"/>
@@ -467,8 +468,8 @@
 	<xsl:apply-templates/>
 	<xsl:text>ENDPDF</xsl:text>
 	<xsl:call-template name="crlf"/>
-      </xsl:when>
-      <xsl:when test="@type = 'MAXICODE'">
+  </xsl:when>
+  <xsl:when test="@type = 'MAXICODE'">
 	<xsl:choose>
 	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
 	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
@@ -486,9 +487,9 @@
 	  <xsl:call-template name="crlf"/>
 	</xsl:for-each>
 	<xsl:text>ENDMAXICODE</xsl:text>
+</xsl:when>
 	<xsl:call-template name="crlf"/>
-      </xsl:when>
-      <xsl:when test="@type = 'QR'">
+      <xsl:when test="@type = 'QR'"></xsl:when>
 	<xsl:choose>
 	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
 	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
@@ -524,8 +525,7 @@
 	<xsl:call-template name="crlf"/>
 	<xsl:text>ENDQR</xsl:text>
 	<xsl:call-template name="crlf"/>
-      </xsl:when>
-      <xsl:when test="@type = 'AZTEC'">
+      <xsl:when test="@type = 'AZTEC'"></xsl:when>
 	<xsl:choose>
 	  <xsl:when test="@x"><xsl:value-of select="@x"/></xsl:when>
 	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
@@ -547,8 +547,6 @@
 	<xsl:apply-templates/>
 	<xsl:text>ENDAZTEC</xsl:text>
 	<xsl:call-template name="crlf"/>
-      </xsl:when>
-      <xsl:otherwise>
 	<xsl:choose>
 	  <xsl:when test="@width"><xsl:value-of select="@width"/></xsl:when>
 	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
@@ -576,8 +574,6 @@
 	<xsl:text> </xsl:text>
 	<xsl:value-of select="text()"/>
 	<xsl:call-template name="crlf"/>
-      </xsl:otherwise>
-    </xsl:choose>
   </xsl:template>
 
   <!-- Barcode text commands:
