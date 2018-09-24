@@ -36,3 +36,14 @@ CPCL/XML would be:
 
 Installing this package will allow you to print CPCL or CPCL/XML
 documents directly to your Zebra printer via CUPS.
+
+Installation
+------------
+
+You can download prebuilt RPMs for RHEL and Fedora from the [Unipart
+Digital package
+repository](https://copr.fedorainfracloud.org/coprs/unipartdigital/pkgs/).
+
+Alternatively, you can easily build from the source code:
+
+    make && make test && sudo make install
