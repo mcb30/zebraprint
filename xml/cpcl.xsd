@@ -29,7 +29,7 @@
 	<xs:element name="announce" type="xs:string"/>
 	<xs:element name="auto-pace" type="element-only"/>
 	<xs:element name="b" type="barcode"/>
-	<xs:element name="bar-sense" type="element-only"/>
+	<xs:element name="bar-sense" type="media-sense"/>
 	<xs:element name="barcode" type="barcode"/>
 	<xs:element name="barcode-text" type="barcode-text"/>
 	<xs:element name="baud" type="baud"/>
@@ -50,7 +50,7 @@
 	<xs:element name="expanded-graphics" type="expanded-graphics"/>
 	<xs:element name="fg" type="fg"/>
 	<xs:element name="form" type="element-only"/>
-	<xs:element name="gap-sense" type="element-only"/>
+	<xs:element name="gap-sense" type="media-sense"/>
 	<xs:element name="il" type="line"/>
 	<xs:element name="in-centimeters" type="element-only"/>
 	<xs:element name="in-dots" type="element-only"/>
@@ -392,6 +392,11 @@
       <xs:maxInclusive value="8"/>
     </xs:restriction>
   </xs:simpleType>
+
+  <!-- Media sense element -->
+  <xs:complexType name="media-sense">
+    <xs:attribute name="level" type="xs:integer"/>
+  </xs:complexType>
 
   <!-- Model element -->
   <xs:simpleType name="model">

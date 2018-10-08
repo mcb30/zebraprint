@@ -105,8 +105,7 @@
 		       z:rewind-on |
 		       z:cut |
 		       z:partial-cut |
-		       z:label |
-		       z:bar-sense">
+		       z:label">
     <xsl:call-template name="command"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
@@ -808,6 +807,17 @@
     <xsl:value-of select="@file"/>
     <xsl:call-template name="crlf"/>
     <xsl:apply-templates/>
+  </xsl:template>
+
+  <!-- Media sense commands -->
+  <xsl:template match="z:bar-sense |
+		       z:gap-sense">
+    <xsl:call-template name="command"/>
+    <xsl:if test="@level">
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="@level"/>
+    </xsl:if>
+    <xsl:call-template name="crlf"/>
   </xsl:template>
 
 </xsl:stylesheet>
