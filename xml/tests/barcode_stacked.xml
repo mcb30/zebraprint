@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
   <print height="300">
-    <t font="5" x="10" y="40">RSS14S   (type=3)</t>
+    <t font="5" x="10" y="40">RSS14S &#160;&#160;(type=3)</t>
     <t font="5" x="10" y="70">1234567890123</t>
     <barcode type="RSS" x="10" y="100" width="3" height="25" sep="3"
 	     segments="22" subtype="3">1234567890123</barcode>

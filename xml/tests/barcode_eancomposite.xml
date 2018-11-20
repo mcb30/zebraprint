@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
   <print height="400">
-    <t font="5" x="10" y="40">UCC128A   (type=11)</t>
+    <t font="5" x="10" y="40">UCC128A &#160;&#160;(type=11)</t>
     <t font="5" x="10" y="70">12345678901234567890|1234567890</t>
-    <barcode type="RSS" x="10" y="140" width="3" height="25" sep="3" segments="22" subtype="11">12345678901234567890|1234567890</barcode>
+    <barcode type="RSS" x="10" y="140" width="3" height="25" sep="3"
+	     segments="22" subtype="11">
+      12345678901234567890|1234567890
+    </barcode>
   </print>
 </cpcl>

@@ -20,6 +20,11 @@
     <xsl:value-of select="translate(local-name(),$lowercase,$uppercase)"/>
   </xsl:template>
 
+  <!-- Strip whitespace from element text -->
+  <xsl:template name="text">
+    <xsl:value-of select="translate(normalize-space(.),'&#160;',' ')"/>
+  </xsl:template>
+
   <!-- Root element -->
   <xsl:template match="/z:cpcl">
     <xsl:apply-templates/>
@@ -141,7 +146,7 @@
 		       z:setlf">
     <xsl:call-template name="command"/>
     <xsl:text> </xsl:text>
-    <xsl:value-of select="text()"/>
+    <xsl:call-template name="text"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
 
@@ -179,7 +184,7 @@
       </xsl:when>
       <xsl:otherwise>
 	<xsl:text> </xsl:text>
-	<xsl:value-of select="text()"/>
+	<xsl:call-template name="text"/>
 	<xsl:call-template name="crlf"/>
       </xsl:otherwise>
     </xsl:choose>
@@ -224,7 +229,7 @@
       <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:text> </xsl:text>
-    <xsl:value-of select="text()"/>
+    <xsl:call-template name="text"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
   <xsl:template name="scalable-font-attributes">
@@ -310,7 +315,7 @@
       <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:text> </xsl:text>
-    <xsl:value-of select="text()"/>
+    <xsl:call-template name="text"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
   <xsl:template match="z:concat/z:scale-text |
@@ -326,7 +331,7 @@
       <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:text> </xsl:text>
-    <xsl:value-of select="text()"/>
+    <xsl:call-template name="text"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
 
@@ -428,7 +433,7 @@
 	  <xsl:otherwise><xsl:text>1</xsl:text></xsl:otherwise>
 	</xsl:choose>
 	<xsl:text> </xsl:text>
-	<xsl:value-of select="text()"/>
+	<xsl:call-template name="text"/>
 	<xsl:if test="@extra">
 	  <xsl:text>|</xsl:text>
 	  <xsl:value-of select="@extra"/>
@@ -480,7 +485,7 @@
 	<xsl:for-each select="*">
 	  <xsl:call-template name="command"/>
 	  <xsl:text> </xsl:text>
-	  <xsl:value-of select="text()"/>
+	  <xsl:call-template name="text"/>
 	  <xsl:call-template name="crlf"/>
 	</xsl:for-each>
 	<xsl:text>ENDMAXICODE</xsl:text>
@@ -518,7 +523,7 @@
 	  <xsl:otherwise><xsl:text>A</xsl:text></xsl:otherwise>
 	</xsl:choose>
 	<xsl:text>,</xsl:text>
-	<xsl:value-of select="text()"/>
+	<xsl:call-template name="text"/>
 	<xsl:call-template name="crlf"/>
 	<xsl:text>ENDQR</xsl:text>
 	<xsl:call-template name="crlf"/>
@@ -572,7 +577,7 @@
 	  <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
 	</xsl:choose>
 	<xsl:text> </xsl:text>
-	<xsl:value-of select="text()"/>
+	<xsl:call-template name="text"/>
 	<xsl:call-template name="crlf"/>
       </xsl:otherwise>
     </xsl:choose>
@@ -729,7 +734,7 @@
       <xsl:otherwise><xsl:text>0</xsl:text></xsl:otherwise>
     </xsl:choose>
     <xsl:text> </xsl:text>
-    <xsl:value-of select="text()"/>
+    <xsl:call-template name="text"/>
     <xsl:call-template name="crlf"/>
   </xsl:template>
 

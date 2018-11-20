@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cpcl xmlns="http://www.fensystems.co.uk/xmlns/cpcl">
   <print height="500">
-    <b type="QR" x="10" y="100" model="2" width="10" level="M">QR code ABC123</b>
+    <b type="QR" x="10" y="100" model="2" width="10" level="M">
+      QR code ABC123
+    </b>
     <t font="4" x="10" y="400">QR code ABC123</t>
     <form/>
   </print>
