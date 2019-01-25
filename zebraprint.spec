@@ -41,6 +41,12 @@ mkdir -p $RPM_BUILD_ROOT{%{cups_datadir}/mime,%{cups_filterdir}}
 %{make_install} CUPS_DATADIR=$RPM_BUILD_ROOT%{cups_datadir} \
 		CUPS_FILTERDIR=$RPM_BUILD_ROOT%{cups_filterdir}
 
+%post
+systemctl try-restart cups.path cups.socket cups.service &>/dev/null || :
+
+%postun
+systemctl try-restart cups.path cups.socket cups.service &>/dev/null || :
+
 %files
 %license COPYING
 %dir %{cups_datadir}/zebraprint
